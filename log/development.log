@@ -2,3 +2,145 @@
   ↳ bin/rails:9
   [1m[35m (284.0ms)[0m  [1m[35mCREATE DATABASE "Switch_test" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-12-07 11:35:28 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-07 11:36:53 -0800
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/75d428c12b5b29e7/variables" for ::1 at 2020-12-07 11:36:53 -0800
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20201207193930)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201207193930_create_users.rb:3
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20201207193930_create_users.rb:11
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20201207193930_create_users.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201207193930"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-07 19:44:43.384509"], ["updated_at", "2020-12-07 19:44:43.384509"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-12-07 11:53:15 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/d0c27a900d35f665/variables" for ::1 at 2020-12-07 11:53:15 -0800
+Started GET "/" for ::1 at 2020-12-07 11:57:02 -0800
+
+SyntaxError - syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :user, only [:create]
+                         ^
+/home/tony_baloney/Switch/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :session, only [:create, :destroy]
+                            ^:
+  config/routes.rb:4:in `'
+
+Started POST "/__better_errors/ae6a0a6801f0ae51/variables" for ::1 at 2020-12-07 11:57:02 -0800
+Started GET "/" for ::1 at 2020-12-07 11:59:56 -0800
+
+SyntaxError - syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resources :users, only [:create]
+                           ^
+/home/tony_baloney/Switch/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :session, only [:create, :destroy]
+                            ^:
+  config/routes.rb:4:in `'
+
+Started POST "/__better_errors/0cbf6fe84235ad9c/variables" for ::1 at 2020-12-07 11:59:56 -0800
+Started GET "/" for ::1 at 2020-12-07 12:01:52 -0800
+
+SyntaxError - syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resources :users, only [:create]
+                           ^
+/home/tony_baloney/Switch/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :session, only [:create, :destroy]
+                            ^:
+  config/routes.rb:4:in `'
+
+Started POST "/__better_errors/d5b0568f59802924/variables" for ::1 at 2020-12-07 12:01:52 -0800
+Started GET "/" for ::1 at 2020-12-07 12:08:30 -0800
+
+SyntaxError - syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :users, only [:create]
+                          ^
+/home/tony_baloney/Switch/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :session, only [:create, :destroy]
+                            ^:
+  config/routes.rb:4:in `'
+
+Started POST "/__better_errors/92945c487f79967a/variables" for ::1 at 2020-12-07 12:08:30 -0800
+Started GET "/" for ::1 at 2020-12-07 12:08:37 -0800
+
+SyntaxError - syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :user, only [:create]
+                         ^
+/home/tony_baloney/Switch/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resource :session, only [:create, :destroy]
+                            ^:
+  config/routes.rb:4:in `'
+
+Started POST "/__better_errors/b3419651dab29ac0/variables" for ::1 at 2020-12-07 12:08:37 -0800
+Started GET "/" for ::1 at 2020-12-07 12:09:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 615ms (Views: 615.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-07 12:11:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 236ms (Views: 235.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-07 12:11:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 223ms (Views: 222.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-07 12:16:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-07 12:17:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
