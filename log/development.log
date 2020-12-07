@@ -1,0 +1,4 @@
+  [1m[35m (281.1ms)[0m  [1m[35mCREATE DATABASE "Switch_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (284.0ms)[0m  [1m[35mCREATE DATABASE "Switch_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
