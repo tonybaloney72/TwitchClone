@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid lightgrey;
+    height: 50px;
+
+    .navleft {
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .navright {
+        
+        button {
+            // background: white;
+        }
+
+        button:hover {
+            background: #6441A4;
+            color: #ffffff
+        }
+    }
+
+    .sessionbutton {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+        margin: 5px;
+        // font-weight: 100%;
+    }
+
+    #login {
+        background: rgb(235, 235, 235)
+    }
+
+    #login:hover {
+        background: rgb(218, 218, 218)
+    }
+
+    #signup {
+        background: #785fa7;
+        color: #ffffff;
+    }
+
+    #signup:hover {
+        background: #6441A4;
+        color: #ffffff
+    }
+}
+

@@ -5,12 +5,12 @@ import { AuthRoute } from '../utils/route_util'
 import SignupContainer from './session/signup_container'
 import LoginContainer from './session/login_container'
 import SplashContainer from './splash/splash_container'
-import NavBar from './navbar/navbar'
+import NavBarContainer from './navbar/navbar_container'
 
 const App = () => {
     return (
         <div>
-            <NavBar />
+            <NavBarContainer />
             <AuthRoute path="/signup" component={SignupContainer}/>
             <AuthRoute path="/login" component={LoginContainer}/>
             <Route exact path="/" component={SplashContainer}/>

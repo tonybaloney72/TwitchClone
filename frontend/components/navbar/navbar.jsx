@@ -1,23 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser, logout }) => {
+const NavBar = ({ currentUser, logout, clearErrors }) => {
     
     const logged_out = () => (
-        <div>
-            <Link className="homebutton" to="/">Home</Link>
-            <Link className="sessionbutton" to="/login">Log In</Link>
-            <Link className="sessionbutton" to="/signup">Sign Up</Link>
+        <div className="navbar">
+            <div className="navleft">
+                {/* <Link className="homebutton" to="/">Home</Link> */}
+                <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
+            </div>
+            <div className="navright">
+                <Link className="sessionbutton" id="login" to="/login" onClick={clearErrors}>Log In</Link>
+                <Link className="sessionbutton" id="signup" to="/signup" onClick={clearErrors}>Sign Up</Link>
+            </div>
         </div>
     )
 
     const logged_in = () => (
-        <div>
-            <Link className="homebutton" to="/">Home</Link>
-            <button onClick={logout}>Log out</button>
+        <div className="navbar">
+            <div className="navleft">
+                {/* <Link className="homebutton" to="/">Home</Link> */}
+                <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
+            </div>
+            <div className="navright">
+                <button onClick={logout}>Log out</button>
+            </div>
         </div>
     )
-
+    // debugger
     return currentUser ? logged_in() : logged_out()
 
 }

@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     handleInput(type) {
@@ -24,7 +25,13 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
-            .then(() => this.props.history.push('/'));
+        // .then(() => this.props.history.push('/'));
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demoUser = { username: 'SwitchDemoUser', password: '123456' }
+        this.props.loginDemoUser(demoUser)
     }
 
     render() {
@@ -33,6 +40,9 @@ class SessionForm extends React.Component {
                 {/* <span className="loginlink"><Link to="/login">Log In</Link></span>
                 <span className="signuplink"><Link to="/signup">Sign Up</Link></span> */}
                 <h1>{this.props.formHeader}</h1>
+                {this.props.errors.map( (el, idx) => (
+                    <div key={idx}>{el}</div>
+                ))}
                 <form onSubmit={this.handleSubmit}>
                     {
                         this.props.formType === 'Sign Up' ? (
@@ -61,6 +71,7 @@ class SessionForm extends React.Component {
                     </label>
                     <button>{this.props.formType}</button>
                 </form>
+                <button onClick={this.handleDemoUser}>Demo User</button>
             </div>
         );
     }
