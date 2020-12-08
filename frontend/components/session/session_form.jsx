@@ -29,9 +29,8 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <Link to="/">Home</Link>
-                <Link to="/login">Log In</Link>
-                <Link to="/signup">Sign Up</Link>
+                <span className="loginlink"><Link to="/login">Log In</Link></span>
+                <span className="signuplink"><Link to="/signup">Sign Up</Link></span>
                 <h1>{this.props.formHeader}</h1>
                 <form onSubmit={this.handleSubmit}>
                     {

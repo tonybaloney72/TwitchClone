@@ -11,7 +11,7 @@ const Splash = ({ currentUser, logout }) => {
         </div>
     )
 
-    const personalGreeting = () => (
+    const userGreeting = () => (
         <div>
             <h1>Well met {currentUser.username}!</h1>
             <h3>content</h3>
@@ -19,7 +19,7 @@ const Splash = ({ currentUser, logout }) => {
         </div>
     )
     
-    return currentUser ? personalGreeting() : generalGreeting()
+    return currentUser ? userGreeting() : generalGreeting()
 }
 
 export default Splash;
