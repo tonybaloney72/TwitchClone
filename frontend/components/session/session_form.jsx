@@ -24,13 +24,14 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
         return (
             <div className="session-form">
-                <span className="loginlink"><Link to="/login">Log In</Link></span>
-                <span className="signuplink"><Link to="/signup">Sign Up</Link></span>
+                {/* <span className="loginlink"><Link to="/login">Log In</Link></span>
+                <span className="signuplink"><Link to="/signup">Sign Up</Link></span> */}
                 <h1>{this.props.formHeader}</h1>
                 <form onSubmit={this.handleSubmit}>
                     {

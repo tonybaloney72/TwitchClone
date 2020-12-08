@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Splash = ({ currentUser, logout }) => {
     const generalGreeting = () => (
         <div>
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
+            {/* <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link> */}
             <h1>Salutations!</h1>
             <h3>Welcome to Switch.tv!</h3>
         </div>
