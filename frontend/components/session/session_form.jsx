@@ -32,26 +32,40 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const demoUser = { username: 'SwitchDemoUser', password: '123456' }
         this.props.loginDemoUser(demoUser)
+            .then(this.props.closeModal)
     }
 
     render() {
         return (
             <div className="session-form">
-                {/* <span className="loginlink"><Link to="/login">Log In</Link></span>
-                <span className="signuplink"><Link to="/signup">Sign Up</Link></span> */}
                 <div className="modalHeader">
                     <img src={window.images.logo}/>
                     <h3>{this.props.formHeader}</h3>
                 </div>
-                <div className="session-errors">
-                    {this.props.errors.map( (el, idx) => (
-                        <div key={idx}>{el}</div>
-                    ))}
+                <div className="link-to-other">
+                    {
+                        this.props.formType === 'Log In' ? (
+                            <div id="modalForm">
+                                <button id="selected-form">{this.props.formType}</button>
+                                <p>{this.props.otherForm}</p>
+                            </div>
+                        ) : (
+                            <div id="modalForm">
+                                <p>{this.props.otherForm}</p>
+                                <button id="selected-form">{this.props.formType}</button>
+                            </div>
+                        )
+                    }
                 </div>
                 <form onSubmit={this.handleSubmit}>
+                    <div className="session-errors">
+                        {this.props.errors.map( (el, idx) => (
+                            <div key={idx}>{el}</div>
+                        ))}
+                    </div>
                     {
                         this.props.formType === 'Sign Up' ? (
-                            <label><h4>Email:</h4>
+                            <label><h4>Email</h4>
                                 <input
                                     type="text"
                                     value={this.state.email}
@@ -60,14 +74,14 @@ class SessionForm extends React.Component {
                             </label>
                         ) : null
                     }
-                    <label><h4>Username:</h4>
+                    <label><h4>Username</h4>
                         <input
                             type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
                         />
                     </label>
-                    <label><h4>Password:</h4>
+                    <label><h4>Password</h4>
                         <input
                             type="password"
                             value={this.state.password}

@@ -1,12 +1,26 @@
 .session-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    background: white;
+    padding: 20px 10px 20px;
+    border-radius: 6px;
+    width: 400px;
 
     form {
         display: flex;
         flex-direction: column;
+    }
+
+    form input:focus {
+        border: 1px solid #772CE8;
+        background: white;
+    }
+
+    form input {
+        width: 380px;
+        height: 24px;
+        padding-left: 10px;
+        border-radius: 6px;
+        border: 1px solid rgb(209, 209, 209);
+        background: rgb(230, 230, 230)
     }
 
     form input#password {
@@ -15,6 +29,7 @@
 
     form label h4 {
         margin: 5px;
+        color: rgb(75, 75, 75)
     }
 
     .sessionbutton {
@@ -41,8 +56,25 @@
         img {
             width: 32px;
             height: 32px;
-            padding: 6px;
+            padding: 8px;
         }
+    }
+
+    .link-to-other {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+
+        #modalForm {
+            display: flex;
+            justify-self: start;
+        }
+    }
+
+    #selected-form {
+        color: #772CE8;
+        border-bottom: 2px solid #772CE8;
     }
 
     // .session-errors {
