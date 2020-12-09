@@ -35,6 +35,17 @@ class SessionForm extends React.Component {
             .then(this.props.closeModal)
     }
 
+    displayErrors() {
+        if (this.props.errors.length === 0) return null;
+        return (
+            <div className="session-errors">
+                {this.props.errors.map( (el, idx) => (
+                    <div key={idx}>{el}</div>
+                ))}
+            </div>
+        )   
+    }
+
     render() {
         return (
             <div className="session-form">
@@ -58,11 +69,7 @@ class SessionForm extends React.Component {
                     }
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="session-errors">
-                        {this.props.errors.map( (el, idx) => (
-                            <div key={idx}>{el}</div>
-                        ))}
-                    </div>
+                    {this.displayErrors()}
                     {
                         this.props.formType === 'Sign Up' ? (
                             <label><h4>Email</h4>

@@ -10,7 +10,7 @@
     }
 
     form input:focus {
-        border: 1px solid #772CE8;
+        border: 2px solid #772CE8;
         background: white;
     }
 
@@ -19,8 +19,8 @@
         height: 24px;
         padding-left: 10px;
         border-radius: 6px;
-        border: 1px solid rgb(209, 209, 209);
-        background: rgb(230, 230, 230)
+        border: 2px solid rgb(209, 209, 209);
+        background: rgb(240, 240, 240)
     }
 
     form input#password {
@@ -75,10 +75,19 @@
     #selected-form {
         color: #772CE8;
         border-bottom: 2px solid #772CE8;
+        border-radius: 0px;
     }
 
-    // .session-errors {
-    //     display: none;
-    //     border: 1px solid rgb(255, 0, 0)
-    // }
+    .session-errors {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid rgb(255, 0, 0);
+        border-left: 4px solid red;
+        border-radius: 6px;
+        background: rgb(255, 221, 221);
+        font-weight: bold;
+    }
 }
