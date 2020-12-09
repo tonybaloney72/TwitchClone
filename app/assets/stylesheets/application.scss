@@ -29,6 +29,9 @@ fieldset, label, span, article, footer, time, small {
   vertical-align:inherit;
   box-sizing: inherit; 
   background: transparent;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300%;
 }
 
 ol, ul {
@@ -59,3 +62,5 @@ img {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
+// font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

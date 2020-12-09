@@ -8,4 +8,20 @@
         display: flex;
         flex-direction: column;
     }
+
+    .sessionbutton {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+        margin: 5px;
+        // font-weight: 100%;
+        background: #785fa7;
+        color: #ffffff;
+    }
+
+    .sessionbutton:hover {
+        background: #6441A4;
+        color: #ffffff
+    }
 }

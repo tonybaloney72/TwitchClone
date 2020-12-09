@@ -10,13 +10,17 @@
         img {
             width: 40px;
             height: 40px;
+            margin: 5px;
         }
     }
 
     .navright {
         
-        button {
-            // background: white;
+        // button {
+        //     background: white;
+        // }
+        #logoutbtn {
+            margin: 5px;
         }
 
         button:hover {

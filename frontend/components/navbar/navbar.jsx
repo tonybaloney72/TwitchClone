@@ -23,7 +23,7 @@ const NavBar = ({ currentUser, logout, clearErrors }) => {
                 <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
             </div>
             <div className="navright">
-                <button onClick={logout}>Log out</button>
+                <button onClick={logout} id="logoutbtn">Log out</button>
             </div>
         </div>
     )

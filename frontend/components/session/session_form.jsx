@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
             <div className="session-form">
                 {/* <span className="loginlink"><Link to="/login">Log In</Link></span>
                 <span className="signuplink"><Link to="/signup">Sign Up</Link></span> */}
-                <h1>{this.props.formHeader}</h1>
+                <h3>{this.props.formHeader}</h3>
                 {this.props.errors.map( (el, idx) => (
                     <div key={idx}>{el}</div>
                 ))}
@@ -69,9 +69,9 @@ class SessionForm extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button>{this.props.formType}</button>
+                    <button className="sessionbutton">{this.props.formType}</button>
                 </form>
-                <button onClick={this.handleDemoUser}>Demo User</button>
+                <button onClick={this.handleDemoUser} className="sessionbutton">Demo User</button>
             </div>
         );
     }

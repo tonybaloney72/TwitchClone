@@ -12,7 +12,7 @@ const Splash = ({ currentUser, logout }) => {
 
     const userGreeting = () => (
         <div className="greeting">
-            <h1>Well met, {currentUser.username}!</h1>
+            <h3>Well met, {currentUser.username}!</h3>
         </div>
     )
     
