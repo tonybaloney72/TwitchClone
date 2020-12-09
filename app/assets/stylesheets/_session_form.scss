@@ -9,6 +9,14 @@
         flex-direction: column;
     }
 
+    form input#password {
+        margin-bottom: 5px;
+    }
+
+    form label h4 {
+        margin: 5px;
+    }
+
     .sessionbutton {
         text-decoration: none;
         font-size: 1rem;
@@ -23,5 +31,17 @@
     .sessionbutton:hover {
         background: #6441A4;
         color: #ffffff
+    }
+
+    .modalHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 35px;
+            height: 35px;
+            padding: 6px;
+        }
     }
 }

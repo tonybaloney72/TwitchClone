@@ -39,14 +39,17 @@ class SessionForm extends React.Component {
             <div className="session-form">
                 {/* <span className="loginlink"><Link to="/login">Log In</Link></span>
                 <span className="signuplink"><Link to="/signup">Sign Up</Link></span> */}
-                <h3>{this.props.formHeader}</h3>
+                <div className="modalHeader">
+                    <img src={window.images.logo}/>
+                    <h3>{this.props.formHeader}</h3>
+                </div>
                 {this.props.errors.map( (el, idx) => (
                     <div key={idx}>{el}</div>
                 ))}
                 <form onSubmit={this.handleSubmit}>
                     {
                         this.props.formType === 'Sign Up' ? (
-                            <label><h3>Email:</h3>
+                            <label><h4>Email:</h4>
                                 <input
                                     type="text"
                                     value={this.state.email}
@@ -55,23 +58,24 @@ class SessionForm extends React.Component {
                             </label>
                         ) : null
                     }
-                    <label><h3>Username:</h3>
+                    <label><h4>Username:</h4>
                         <input
                             type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
                         />
                     </label>
-                    <label><h3>Password:</h3>
+                    <label><h4>Password:</h4>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
+                            id="password"
                         />
                     </label>
                     <button className="sessionbutton">{this.props.formType}</button>
+                    <button onClick={this.handleDemoUser} className="sessionbutton">Demo User</button>
                 </form>
-                <button onClick={this.handleDemoUser} className="sessionbutton">Demo User</button>
             </div>
         );
     }
