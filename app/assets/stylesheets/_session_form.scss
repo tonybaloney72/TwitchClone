@@ -24,12 +24,12 @@
         border-radius: 6px;
         margin: 5px;
         // font-weight: 100%;
-        background: #785fa7;
+        background: #9147FF;
         color: #ffffff;
     }
 
     .sessionbutton:hover {
-        background: #6441A4;
+        background: #772CE8;
         color: #ffffff
     }
 
@@ -39,9 +39,14 @@
         align-items: center;
 
         img {
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             padding: 6px;
         }
     }
+
+    // .session-errors {
+    //     display: none;
+    //     border: 1px solid rgb(255, 0, 0)
+    // }
 }

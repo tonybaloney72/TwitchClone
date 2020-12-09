@@ -43,9 +43,11 @@ class SessionForm extends React.Component {
                     <img src={window.images.logo}/>
                     <h3>{this.props.formHeader}</h3>
                 </div>
-                {this.props.errors.map( (el, idx) => (
-                    <div key={idx}>{el}</div>
-                ))}
+                <div className="session-errors">
+                    {this.props.errors.map( (el, idx) => (
+                        <div key={idx}>{el}</div>
+                    ))}
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     {
                         this.props.formType === 'Sign Up' ? (
