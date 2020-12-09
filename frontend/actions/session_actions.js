@@ -24,9 +24,7 @@ export const clearErrors = () => ({
 })
 
 export const createNewUser = formUser => {
-    // debugger
     return function (dispatch) {
-        // debugger
         return (
             postUser(formUser)
                 .then(user => dispatch(receieveCurrentUser(user)))

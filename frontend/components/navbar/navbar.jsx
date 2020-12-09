@@ -27,7 +27,6 @@ const NavBar = ({ currentUser, logout, clearErrors }) => {
             </div>
         </div>
     )
-    // debugger
     return currentUser ? logged_in() : logged_out()
 
 }
