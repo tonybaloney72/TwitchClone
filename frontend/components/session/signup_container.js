@@ -1,5 +1,7 @@
+import React from 'react';
 import { connect } from "react-redux";
 import { signup } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form'
 
 const msp = state => ({
@@ -10,7 +12,11 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     processForm: formUser => dispatch(signup(formUser)),
-    loginDemoUser: demoUser => dispatch(login(demoUser)) 
+    loginDemoUser: demoUser => dispatch(login(demoUser)),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('Log In'))}>Log In</button>
+    ),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(msp, mdp)(SessionForm);
