@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    has_one: :channel,
+    has_one :channel,
     foreign_key: :user_id,
     class_name: :Channel,
     dependent: :destroy

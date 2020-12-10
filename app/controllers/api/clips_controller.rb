@@ -1,5 +1,9 @@
 class Api::ClipsController < ApplicationController
 
+    def index
+        @clips = Clip.all()
+    end
+    
     def show
         @clip = Clip.find_by(id: param[:id])
     end
@@ -12,6 +16,10 @@ class Api::ClipsController < ApplicationController
         else
             render json: @clip.errors.full_messages
         end
+    end
+
+    def destroy
+        @clip = Clip.find_by(id: param[:id])
     end
 
     private
