@@ -19,6 +19,6 @@ export const getCategories = () => dispatch => (
 )
 
 export const getCategory = category => dispatch => (
-    fetchCategory()
+    fetchCategory(category)
         .then(category => dispatch(receiveCategory(category)))
 )
