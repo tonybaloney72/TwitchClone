@@ -24,12 +24,16 @@
     }
 
     form input#password {
-        margin-bottom: 5px;
+        margin-bottom: 20px;
     }
 
-    form label h4 {
-        margin: 5px;
-        color: rgb(75, 75, 75)
+    form label {
+        margin: 15px 0px 0px 0px;
+
+        h4 {
+            margin: 10px 0px 10px 5px;
+            color: rgb(75, 75, 75)
+        }
     }
 
     .sessionbutton {
@@ -37,7 +41,7 @@
         font-size: 1rem;
         padding: 6px 8px;
         border-radius: 6px;
-        margin: 5px;
+        margin: 5px 5px 5px 0;
         // font-weight: 100%;
         background: #9147FF;
         color: #ffffff;
@@ -76,13 +80,15 @@
         color: #772CE8;
         border-bottom: 2px solid #772CE8;
         border-radius: 0px;
+        margin-right: 10px;
     }
 
     .session-errors {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 5px;
+        margin: 20px 10px 0px 10px;
         padding: 5px;
         border: 1px solid rgb(255, 0, 0);
         border-left: 4px solid red;
