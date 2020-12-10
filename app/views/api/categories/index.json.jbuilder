@@ -1,3 +1,3 @@
 @categories.each do |category|
-    @json.extract! category, :id, :name, :image
+    @json.extract! category, :id, :title, :image
 end
