@@ -8790,3 +8790,1587 @@ Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.9ms)
   ↳ db/seeds.rb:13
   [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateChannels (20201209232505)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.8ms)[0m  [1m[35mCREATE TABLE "channels" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201209232505_create_channels.rb:3
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_channels_on_user_id" ON "channels"  ("user_id")[0m
+  ↳ db/migrate/20201209232505_create_channels.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201209232505"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateClips (20201209233417)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "clips" ("id" bigserial primary key, "channel_id" integer NOT NULL, "category" character varying NOT NULL, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201209233417_create_clips.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_clips_on_channel_id" ON "clips"  ("channel_id")[0m
+  ↳ db/migrate/20201209233417_create_clips.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201209233417"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20201210001106)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201210001106_create_categories.rb:3
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_categories_on_title" ON "categories"  ("title")[0m
+  ↳ db/migrate/20201210001106_create_categories.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201210001106"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveStorageTables (20201210004830)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201210004830_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20201210004830_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20201210004830_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20201210004830_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20201210004830_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201210004830"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4013220239714639415)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mClip Load (0.7ms)[0m  [1m[34mSELECT "clips".* FROM "clips"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = $1 LIMIT $2[0m  [["title", "Hunt: Showdown"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Hunt: Showdown"], ["created_at", "2020-12-10 17:44:48.814100"], ["updated_at", "2020-12-10 17:44:48.814100"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Category"], ["name", "image"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-12-10 10:21:02 -0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 913ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+    has_one: :channel,
+           ^:
+  app/models/user.rb:8:in `'
+  app/controllers/application_controller.rb:7:in `current_user'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2711548159644227811_70061930588720'
+
+Started POST "/__better_errors/1299abf3831aceaa/variables" for ::1 at 2020-12-10 10:21:03 -0800
+Started GET "/" for ::1 at 2020-12-10 10:21:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Category"], ["name", "image"], ["LIMIT", 1]]
+[36m  S3 Storage (232.8ms) [0m[32mUploaded file to key: CwujXH1hxSQqtYosoLpqgt4f (checksum: yTLY6O5y4td2HDIGdCEeiA==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (3.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "CwujXH1hxSQqtYosoLpqgt4f"], ["filename", "Hunt_Showdown.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 24013], ["checksum", "yTLY6O5y4td2HDIGdCEeiA=="], ["created_at", "2020-12-10 18:27:46.735610"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (2.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Category"], ["record_id", 1], ["blob_id", 1], ["created_at", "2020-12-10 18:27:46.751203"]]
+  [1m[36mCategory Update (0.2ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1 WHERE "categories"."id" = $2[0m  [["updated_at", "2020-12-10 18:27:46.754259"], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 031214da-1183-4c14-8db3-9bb2e8c93050) to Async(default) with arguments: #<GlobalID:0x00007f9f690924e0 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050] Performing ActiveStorage::AnalyzeJob (Job ID: 031214da-1183-4c14-8db3-9bb2e8c93050) from Async(default) with arguments: #<GlobalID:0x00007f9f68b173d0 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050] [36m  S3 Storage (159.2ms) [0m[34mDownloaded file from key: CwujXH1hxSQqtYosoLpqgt4f[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [031214da-1183-4c14-8db3-9bb2e8c93050] Performed ActiveStorage::AnalyzeJob (Job ID: 031214da-1183-4c14-8db3-9bb2e8c93050) from Async(default) in 190.86ms
+Started POST "/api/users" for ::1 at 2020-12-10 10:47:45 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yOIlJhmlRXfZp7zhgRaFyw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 422 Unprocessable Entity in 222ms (Views: 0.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 11:16:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 1217ms (Views: 1216.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 11:16:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 11:33:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 11:43:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 11:52:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-10 12:16:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mChannel Create (15.7ms)[0m  [1m[32mINSERT INTO "channels" ("user_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 12], ["name", "TonyBaloney"], ["created_at", "2020-12-10 22:57:53.921981"], ["updated_at", "2020-12-10 22:57:53.921981"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (0.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClip Create (1.9ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", "test"], ["title", "test"], ["created_at", "2020-12-10 22:58:26.668991"], ["updated_at", "2020-12-10 22:58:26.668991"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Clip"], ["name", "video_clip"], ["LIMIT", 1]]
+[36m  S3 Storage (1052.5ms) [0m[32mUploaded file to key: 5juphfAkKq1KTXRVNfs7wW1s (checksum: ufXxZKQcsqRcuDlZM0b39w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "5juphfAkKq1KTXRVNfs7wW1s"], ["filename", "BoxyFresh1.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 12453894], ["checksum", "ufXxZKQcsqRcuDlZM0b39w=="], ["created_at", "2020-12-10 23:06:12.351068"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 1], ["blob_id", 2], ["created_at", "2020-12-10 23:06:12.362882"]]
+  [1m[36mClip Update (0.4ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-10 23:06:12.364024"], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3bbd2701-b8e6-429b-838e-f5b8913c93b2) to Async(default) with arguments: #<GlobalID:0x000055b5c288a5b8 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2] Performing ActiveStorage::AnalyzeJob (Job ID: 3bbd2701-b8e6-429b-838e-f5b8913c93b2) from Async(default) with arguments: #<GlobalID:0x000055b5c17e9f88 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2] [36m  S3 Storage (948.2ms) [0m[34mDownloaded file from key: 5juphfAkKq1KTXRVNfs7wW1s[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3bbd2701-b8e6-429b-838e-f5b8913c93b2] Performed ActiveStorage::AnalyzeJob (Job ID: 3bbd2701-b8e6-429b-838e-f5b8913c93b2) from Async(default) in 980.88ms
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:09:37 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"name"=>"third_person", "email"=>"third_person@mail.com", "id"=>"1"}
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `param' for #<Api::ClipsController:0x00007f019d021610>
+Did you mean?  params
+               params=:
+  app/controllers/api/clips_controller.rb:8:in `show'
+
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:11:03 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"name"=>"third_person", "email"=>"third_person@mail.com", "id"=>"1"}
+  [1m[36mClip Load (0.5ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (0.3ms)
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:11:26 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"name"=>"third_person", "email"=>"third_person@mail.com", "id"=>"1"}
+  [1m[36mClip Load (0.2ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Clip"], ["name", "video_clip"], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:2
+  Rendered api/clips/show.json.jbuilder (49.2ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:27:02 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"name"=>"third_person", "email"=>"third_person@mail.com", "id"=>"1"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (7.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `video_clip' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:6:in `block in _app_views_api_clips_show_json_jbuilder__1194687906041676534_69822480307400'
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder__1194687906041676534_69822480307400'
+
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:27:34 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"name"=>"third_person", "email"=>"third_person@mail.com", "id"=>"1"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Clip"], ["name", "video_clip"], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:6
+  Rendered api/clips/show.json.jbuilder (9.6ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/clips/1" for ::1 at 2020-12-10 15:28:39 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mClip Load (0.2ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Clip"], ["name", "video_clip"], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:6
+  Rendered api/clips/show.json.jbuilder (3.7ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:04:33 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 840ms (Views: 837.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:06:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 275ms (Views: 274.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:07:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 269ms (Views: 267.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:08:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 280ms (Views: 279.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:11:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 263ms (Views: 262.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:11:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 269ms (Views: 267.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-11 08:13:55 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"SwitchDemoUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SwitchDemoUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "SwitchDemoUser"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["updated_at", "2020-12-11 16:13:56.194508"], ["id", 11]]
+  ↳ app/models/user.rb:35
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/info.json.jbuilder
+  Rendered api/users/info.json.jbuilder (0.3ms)
+Completed 200 OK in 226ms (Views: 1.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:14:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 328ms (Views: 327.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:15:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 260ms (Views: 259.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:15:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:16:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 304ms (Views: 303.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:16:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:17:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:18:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 272ms (Views: 271.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:22:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-11 08:22:30 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WYhTfBXGf469QFI7r84Jmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "SwitchDemoUser"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Zuu-ojYC48--xPSmJVzKpw"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Zuu-ojYC48--xPSmJVzKpw"], ["updated_at", "2020-12-11 16:22:30.155812"], ["id", 11]]
+  ↳ app/models/user.rb:35
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-11 08:25:47 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.2ms)
+
+
+
+NameError - undefined local variable or method `new_session_url' for #<Api::SessionsController:0x00007f5efb070100>
+Did you mean?  api_session_url:
+  app/controllers/application_controller.rb:16:in `require_logged_in'
+
+Started GET "/" for ::1 at 2020-12-11 08:25:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-11 08:25:51 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"SwitchDemoUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SwitchDemoUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "SwitchDemoUser"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["updated_at", "2020-12-11 16:25:52.172358"], ["id", 11]]
+  ↳ app/models/user.rb:35
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/info.json.jbuilder
+  Rendered api/users/info.json.jbuilder (0.3ms)
+Completed 200 OK in 216ms (Views: 1.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:33:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 291ms (Views: 289.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:34:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:34:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:35:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 289ms (Views: 288.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:36:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 277ms (Views: 276.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:37:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:37:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 306ms (Views: 305.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:38:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:38:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:38:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:38:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:39:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:40:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 271ms (Views: 269.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:40:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:41:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:41:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:41:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:41:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-11 08:42:36 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "maE-aMOng8AvgiJP0CWQOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "SwitchDemoUser"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "qcSKSm9neGzOBn-mW8nb_g"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qcSKSm9neGzOBn-mW8nb_g"], ["updated_at", "2020-12-11 16:42:36.536626"], ["id", 11]]
+  ↳ app/models/user.rb:35
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-11 08:42:41 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"SwitchDemoUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SwitchDemoUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "SwitchDemoUser"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["updated_at", "2020-12-11 16:42:41.502916"], ["id", 11]]
+  ↳ app/models/user.rb:35
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+  Rendering api/users/info.json.jbuilder
+  Rendered api/users/info.json.jbuilder (0.3ms)
+Completed 200 OK in 214ms (Views: 1.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:50:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:54:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 302ms (Views: 301.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:54:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:55:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:55:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:55:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:55:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:58:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 08:59:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:01:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:09:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:11:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:11:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 268ms (Views: 267.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:27:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:27:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:28:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 09:29:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:16:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 314ms (Views: 309.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:31:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 284ms (Views: 282.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:35:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:37:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:44:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 316ms (Views: 314.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:45:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:45:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 273ms (Views: 272.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:46:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:47:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 10:47:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 50ms (Views: 49.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 11:03:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 293ms (Views: 287.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 11:07:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 280ms (Views: 278.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:07:43 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"Thing", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x00007f5ef9f19488 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1vne2uu.mp4>, @original_filename="AT-cm 960170149.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 960170149.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1520.7ms) [0m[32mUploaded file to key: CfaunXymBAoiXYrTx2BCGrmP (checksum: q4uz4yPBapIl7hV95dp3LA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "CfaunXymBAoiXYrTx2BCGrmP"], ["filename", "AT-cm 960170149.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 18328735], ["checksum", "q4uz4yPBapIl7hV95dp3LA=="], ["created_at", "2020-12-11 19:07:44.792737"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.3ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "Thing"], ["created_at", "2020-12-11 19:07:44.815193"], ["updated_at", "2020-12-11 19:07:44.815193"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 2], ["blob_id", 3], ["created_at", "2020-12-11 19:07:44.816819"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.4ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:07:44.818085"], ["id", 2]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: edc8c365-2f1f-47d4-bdff-5a39b6c10d60) to Async(default) with arguments: #<GlobalID:0x00007f5efb1564e8 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/3>>
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (1.2ms)
+Completed 200 OK in 1698ms (Views: 2.9ms | ActiveRecord: 17.5ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60] Performing ActiveStorage::AnalyzeJob (Job ID: edc8c365-2f1f-47d4-bdff-5a39b6c10d60) from Async(default) with arguments: #<GlobalID:0x00007f5efb120f28 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60] [36m  S3 Storage (1044.5ms) [0m[34mDownloaded file from key: CfaunXymBAoiXYrTx2BCGrmP[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [edc8c365-2f1f-47d4-bdff-5a39b6c10d60] Performed ActiveStorage::AnalyzeJob (Job ID: edc8c365-2f1f-47d4-bdff-5a39b6c10d60) from Async(default) in 1079.32ms
+Started GET "/" for ::1 at 2020-12-11 11:12:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 281ms (Views: 279.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:13:11 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"another video", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x00007f5efb2ea408 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1mibc03.mp4>, @original_filename="AT-cm 844968932.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 844968932.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1393.6ms) [0m[32mUploaded file to key: BEoqqLb8Zn7bzgZAcnkGwULc (checksum: uDWrETyEP8SK0Zd80FJi1Q==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "BEoqqLb8Zn7bzgZAcnkGwULc"], ["filename", "AT-cm 844968932.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 25074471], ["checksum", "uDWrETyEP8SK0Zd80FJi1Q=="], ["created_at", "2020-12-11 19:13:12.948610"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.4ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "another video"], ["created_at", "2020-12-11 19:13:12.959705"], ["updated_at", "2020-12-11 19:13:12.959705"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 3], ["blob_id", 4], ["created_at", "2020-12-11 19:13:12.962258"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.4ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:13:12.963898"], ["id", 3]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b1a11e2e-fb10-4964-b2fa-3826a35e030b) to Async(default) with arguments: #<GlobalID:0x00007f5efb29b268 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/4>>
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (0.6ms)
+Completed 200 OK in 1469ms (Views: 2.1ms | ActiveRecord: 8.2ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b] Performing ActiveStorage::AnalyzeJob (Job ID: b1a11e2e-fb10-4964-b2fa-3826a35e030b) from Async(default) with arguments: #<GlobalID:0x00007f5efb282e70 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/4>>
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:13:12 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (7.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022958595100'
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b] [36m  S3 Storage (1097.7ms) [0m[34mDownloaded file from key: BEoqqLb8Zn7bzgZAcnkGwULc[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b1a11e2e-fb10-4964-b2fa-3826a35e030b] Performed ActiveStorage::AnalyzeJob (Job ID: b1a11e2e-fb10-4964-b2fa-3826a35e030b) from Async(default) in 1129.63ms
+Started POST "/api/clips" for ::1 at 2020-12-11 11:16:16 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"asdf", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x00007f5efb2de428 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1pllkgh.mp4>, @original_filename="39757914014-offset-12624.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"39757914014-offset-12624.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1010.6ms) [0m[32mUploaded file to key: fjDq9JM6NAiW5pRjjiUGM2Uz (checksum: xdS6ytNbOUZ0eDsk1k+T7w==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "fjDq9JM6NAiW5pRjjiUGM2Uz"], ["filename", "39757914014-offset-12624.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 21330637], ["checksum", "xdS6ytNbOUZ0eDsk1k+T7w=="], ["created_at", "2020-12-11 19:16:17.898086"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.4ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "asdf"], ["created_at", "2020-12-11 19:16:17.905669"], ["updated_at", "2020-12-11 19:16:17.905669"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 4], ["blob_id", 5], ["created_at", "2020-12-11 19:16:17.907182"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.4ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:16:17.908463"], ["id", 4]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 87ba3542-4eda-4d00-af11-bef3569398b0) to Async(default) with arguments: #<GlobalID:0x00007f5efa3515f0 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/5>>
+  Rendering api/clips/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendered api/clips/show.json.jbuilder (0.9ms)
+Completed 200 OK in 1071ms (Views: 3.4ms | ActiveRecord: 7.6ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0] Performing ActiveStorage::AnalyzeJob (Job ID: 87ba3542-4eda-4d00-af11-bef3569398b0) from Async(default) with arguments: #<GlobalID:0x00007f5efa41fb08 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/5>>
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:16:17 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (2.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022951502200'
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0] [36m  S3 Storage (952.1ms) [0m[34mDownloaded file from key: fjDq9JM6NAiW5pRjjiUGM2Uz[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87ba3542-4eda-4d00-af11-bef3569398b0] Performed ActiveStorage::AnalyzeJob (Job ID: 87ba3542-4eda-4d00-af11-bef3569398b0) from Async(default) in 982.93ms
+Started POST "/api/clips" for ::1 at 2020-12-11 11:17:47 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"wow", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x00007f5efb2ea638 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-g2nm9b.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1277.9ms) [0m[32mUploaded file to key: HAJ8hWH6ojhFdMSKWoTgKhrs (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "HAJ8hWH6ojhFdMSKWoTgKhrs"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:17:49.125190"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.2ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "wow"], ["created_at", "2020-12-11 19:17:49.132865"], ["updated_at", "2020-12-11 19:17:49.132865"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 5], ["blob_id", 6], ["created_at", "2020-12-11 19:17:49.133932"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.3ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:17:49.134959"], ["id", 5]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a802f0e6-6b44-4950-90bd-b77ce68ae7a5) to Async(default) with arguments: #<GlobalID:0x00007f5efb29e0d0 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/6>>
+  Rendering api/clips/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5] Performing ActiveStorage::AnalyzeJob (Job ID: a802f0e6-6b44-4950-90bd-b77ce68ae7a5) from Async(default) with arguments: #<GlobalID:0x00007f5efb28ba48 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/6>>
+  Rendered api/clips/show.json.jbuilder (0.6ms)
+Completed 200 OK in 1344ms (Views: 4.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:17:49 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022958607200'
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5] [36m  S3 Storage (1198.1ms) [0m[34mDownloaded file from key: HAJ8hWH6ojhFdMSKWoTgKhrs[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a802f0e6-6b44-4950-90bd-b77ce68ae7a5] Performed ActiveStorage::AnalyzeJob (Job ID: a802f0e6-6b44-4950-90bd-b77ce68ae7a5) from Async(default) in 1233.35ms
+Started GET "/" for ::1 at 2020-12-11 11:18:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 271ms (Views: 270.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:18:55 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.4ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022957364380'
+
+Started GET "/" for ::1 at 2020-12-11 11:18:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:19:08 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"c'mon work", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c546c956b0 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-kb5x9r.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1575.1ms) [0m[32mUploaded file to key: AihJwVjFUZ7zszEqypSAni1U (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "AihJwVjFUZ7zszEqypSAni1U"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:19:10.250046"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.2ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "c'mon work"], ["created_at", "2020-12-11 19:19:10.257545"], ["updated_at", "2020-12-11 19:19:10.257545"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 6], ["blob_id", 7], ["created_at", "2020-12-11 19:19:10.258693"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.2ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:19:10.259590"], ["id", 6]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 2ea7741a-87df-4be0-ab81-f7a0a3379f27) to Async(default) with arguments: #<GlobalID:0x00007f5efb296d80 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/7>>
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (0.7ms)
+Completed 200 OK in 1641ms (Views: 2.0ms | ActiveRecord: 7.5ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27] Performing ActiveStorage::AnalyzeJob (Job ID: 2ea7741a-87df-4be0-ab81-f7a0a3379f27) from Async(default) with arguments: #<GlobalID:0x00007f5efb27ce08 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27] [36m  S3 Storage (1419.4ms) [0m[34mDownloaded file from key: AihJwVjFUZ7zszEqypSAni1U[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2ea7741a-87df-4be0-ab81-f7a0a3379f27] Performed ActiveStorage::AnalyzeJob (Job ID: 2ea7741a-87df-4be0-ab81-f7a0a3379f27) from Async(default) in 1457.59ms
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:22:18 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.4ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022958266160'
+
+Started GET "/" for ::1 at 2020-12-11 11:22:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 351ms (Views: 350.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/clips/undefined" for ::1 at 2020-12-11 11:22:21 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mClip Load (0.5ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (1.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/clips/show.json.jbuilder:1:in `_app_views_api_clips_show_json_jbuilder___3488683020786939185_70022948801680'
+
+Started GET "/" for ::1 at 2020-12-11 11:22:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:22:36 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"another thing", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c546cea4a8 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1maii6o.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1409.2ms) [0m[32mUploaded file to key: TZaP3mFaF2VMt2teJPkRrtJr (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "TZaP3mFaF2VMt2teJPkRrtJr"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:22:37.668897"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Create (0.4ms)[0m  [1m[32mINSERT INTO "clips" ("channel_id", "category", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["channel_id", 1], ["category", ""], ["title", "another thing"], ["created_at", "2020-12-11 19:22:37.677568"], ["updated_at", "2020-12-11 19:22:37.677568"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video_clip"], ["record_type", "Clip"], ["record_id", 7], ["blob_id", 8], ["created_at", "2020-12-11 19:22:37.678781"]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mClip Update (0.3ms)[0m  [1m[33mUPDATE "clips" SET "updated_at" = $1 WHERE "clips"."id" = $2[0m  [["updated_at", "2020-12-11 19:22:37.679894"], ["id", 7]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6c3fda1a-5ed9-4c91-a56e-94cd55547248) to Async(default) with arguments: #<GlobalID:0x00007f5efb251bb8 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/8>>
+  Rendering api/clips/show.json.jbuilder
+  Rendered api/clips/show.json.jbuilder (0.6ms)
+Completed 200 OK in 1473ms (Views: 2.4ms | ActiveRecord: 7.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248] Performing ActiveStorage::AnalyzeJob (Job ID: 6c3fda1a-5ed9-4c91-a56e-94cd55547248) from Async(default) with arguments: #<GlobalID:0x00007f5efb23c920 @uri=#<URI::GID gid://switch/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248] [36m  S3 Storage (1241.8ms) [0m[34mDownloaded file from key: TZaP3mFaF2VMt2teJPkRrtJr[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248]   ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6c3fda1a-5ed9-4c91-a56e-94cd55547248] Performed ActiveStorage::AnalyzeJob (Job ID: 6c3fda1a-5ed9-4c91-a56e-94cd55547248) from Async(default) in 1302.95ms
+Started GET "/api/clips/7" for ::1 at 2020-12-11 11:22:53 -0800
+Processing by Api::ClipsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT  "clips".* FROM "clips" WHERE "clips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:8
+  Rendering api/clips/show.json.jbuilder
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b07fb4352a9d2a951a294b63c55e15a059711370/AT-cm%20943867799.mp4" for ::1 at 2020-12-11 11:22:53 -0800
+Processing by ActiveStorage::BlobsController#show as MP4
+  [1m[36mActiveStorage::Attachment Load (18.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Clip"], ["name", "video_clip"], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:5
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b07fb4352a9d2a951a294b63c55e15a059711370", "filename"=>"AT-cm 943867799"}
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/clips/show.json.jbuilder:5
+  Rendered api/clips/show.json.jbuilder (25.3ms)
+Completed 200 OK in 29ms (Views: 7.1ms | ActiveRecord: 20.8ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: TZaP3mFaF2VMt2teJPkRrtJr (https://switch-tv-dev.s3.us-west-1.amazonaws.com/TZaP3mFaF2VMt2teJPkRrtJr?response-content-disposition=attachment%3B%20filename%3D%22AT-cm%20943867799.mp4%22%3B%20filename%2A%3DUTF-8%27%27AT-cm%2520943867799.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATZVATWR2DLF7ALOL%2F20201211%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20201211T192253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3cf44c08e8fc1d08732d8b7cfa09868b050b86524d0cb663e6d8e22052d73049)[0m
+Redirected to https://switch-tv-dev.s3.us-west-1.amazonaws.com/TZaP3mFaF2VMt2teJPkRrtJr?response-content-disposition=attachment%3B%20filename%3D%22AT-cm%20943867799.mp4%22%3B%20filename%2A%3DUTF-8%27%27AT-cm%2520943867799.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATZVATWR2DLF7ALOL%2F20201211%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20201211T192253Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3cf44c08e8fc1d08732d8b7cfa09868b050b86524d0cb663e6d8e22052d73049
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 11:25:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:25:28 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>"null"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveSupport::MessageVerifier::InvalidSignature - ActiveSupport::MessageVerifier::InvalidSignature:
+  app/controllers/api/clips_controller.rb:12:in `create'
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:25:41 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>"null"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveSupport::MessageVerifier::InvalidSignature - ActiveSupport::MessageVerifier::InvalidSignature:
+  app/controllers/api/clips_controller.rb:12:in `create'
+
+Started GET "/" for ::1 at 2020-12-11 11:26:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:26:43 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>"null"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveSupport::MessageVerifier::InvalidSignature - ActiveSupport::MessageVerifier::InvalidSignature:
+  app/controllers/api/clips_controller.rb:12:in `create'
+
+Started POST "/api/clips" for ::1 at 2020-12-11 11:27:05 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c546c94cb0 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-4ys6el.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+Started POST "/api/clips" for ::1 at 2020-12-11 11:27:06 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c546cbd2a0 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1iyataf.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+Started POST "/api/clips" for ::1 at 2020-12-11 11:27:07 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c548575248 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-1fucw85.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+Started POST "/api/clips" for ::1 at 2020-12-11 11:27:07 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c546ceff70 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-16t8nou.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+Started POST "/api/clips" for ::1 at 2020-12-11 11:27:07 -0800
+Processing by Api::ClipsController#create as JSON
+  Parameters: {"clip"=>{"title"=>"", "channel_id"=>"1", "category"=>"", "video_clip"=>#<ActionDispatch::Http::UploadedFile:0x000055c5495af3c0 @tempfile=#<Tempfile:/tmp/RackMultipart20201211-3830-2t1puk.mp4>, @original_filename="AT-cm 943867799.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"clip[video_clip]\"; filename=\"AT-cm 943867799.mp4\"\r\nContent-Type: video/mp4\r\n">}}
+[36m  S3 Storage (1922.3ms) [0m[32mUploaded file to key: qhY1yATvccxXXRQk8SdxaN95 (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "qhY1yATvccxXXRQk8SdxaN95"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:27:07.838988"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.8ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+Completed 200 OK in 1984ms (Views: 0.1ms | ActiveRecord: 3.6ms)
+
+
+[36m  S3 Storage (2882.1ms) [0m[32mUploaded file to key: hzFrQBgRktrVrzWtVDewEVtj (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "hzFrQBgRktrVrzWtVDewEVtj"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:27:10.066491"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+Completed 200 OK in 2982ms (Views: 0.2ms | ActiveRecord: 17.9ms)
+
+
+[36m  S3 Storage (4548.9ms) [0m[32mUploaded file to key: 1KLtRKJyzyHFaj6AJnGUzPUN (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "1KLtRKJyzyHFaj6AJnGUzPUN"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:27:11.409325"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+Completed 200 OK in 4606ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+
+[36m  S3 Storage (3851.6ms) [0m[32mUploaded file to key: FUucvhP6xVPrSrkYf94Y2mqX (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "FUucvhP6xVPrSrkYf94Y2mqX"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:27:11.568433"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+Completed 200 OK in 3975ms (Views: 0.1ms | ActiveRecord: 3.3ms)
+
+
+[36m  S3 Storage (5911.5ms) [0m[32mUploaded file to key: iYDbeLWzUoWKk7f1jT32uBAy (checksum: amaZOGyI8XmEYtyvZJR8mg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "iYDbeLWzUoWKk7f1jT32uBAy"], ["filename", "AT-cm 943867799.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 26506805], ["checksum", "amaZOGyI8XmEYtyvZJR8mg=="], ["created_at", "2020-12-11 19:27:13.271148"]]
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/clips_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[36mChannel Load (0.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/clips_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/clips_controller.rb:14
+Completed 200 OK in 6005ms (Views: 0.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-11 11:27:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TwPvtaDk3tRjaIzmEmjiyw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 266ms (Views: 265.5ms | ActiveRecord: 0.4ms)
+
+
