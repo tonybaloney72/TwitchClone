@@ -9119,3 +9119,14 @@ Processing by Api::ClipsController#show as JSON
 Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for ::1 at 2020-12-11 08:04:33 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tony_baloney/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 840ms (Views: 837.9ms | ActiveRecord: 1.9ms)
+
+

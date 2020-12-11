@@ -1,4 +1,4 @@
-import { fetchClips, fetchClip } from '../utils/clips_api'
+import { fetchClips, fetchClip, postClip } from '../utils/clips_api'
 
 export const RECEIVE_CLIPS = 'RECEIVE_CLIPS';
 export const RECEIVE_CLIP = 'RECEIVE_CLIP';
@@ -20,5 +20,10 @@ export const getClips = () => dispatch => (
 
 export const getClip = clipId => dispatch => (
     fetchClip(clipId)
+        .then(clip => dispatch(receiveClip(clip)))
+)
+
+export const submitClip = clip => dispatch => (
+    postClip(clip)
         .then(clip => dispatch(receiveClip(clip)))
 )
