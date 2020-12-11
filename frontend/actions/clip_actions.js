@@ -1,4 +1,4 @@
-import { fetchClips, fetchClip } from '../utils/category_api'
+import { fetchClips, fetchClip } from '../utils/clips_api'
 
 export const RECEIVE_CLIPS = 'RECEIVE_CLIPS';
 export const RECEIVE_CLIP = 'RECEIVE_CLIP';
@@ -8,9 +8,9 @@ const receiveClips = clips => ({
     clips
 })
 
-const receiveClip = clipId => ({
-    type: RECEIVE_CATEGORY,
-    clipId
+const receiveClip = clip => ({
+    type: RECEIVE_CLIP,
+    clip
 })
 
 export const getClips = () => dispatch => (
@@ -20,5 +20,5 @@ export const getClips = () => dispatch => (
 
 export const getClip = clipId => dispatch => (
     fetchClip(clipId)
-        .then(clipId => dispatch(receiveClip(clipId)))
+        .then(clip => dispatch(receiveClip(clip)))
 )
