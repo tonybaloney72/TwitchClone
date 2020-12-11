@@ -10,7 +10,9 @@ class Api::ClipsController < ApplicationController
 
     def create
         @clip = Clip.new(clip_params)
-
+        @clip.channel_id = Channel.first.id
+        # remove this later ^
+        
         if @clip.save
             render :show
         else
