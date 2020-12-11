@@ -5,7 +5,7 @@ class Api::ClipsController < ApplicationController
     end
     
     def show
-        @clip = Clip.find_by(id: param[:id])
+        @clip = Clip.find_by(id: params[:id])
     end
 
     def create
@@ -19,7 +19,7 @@ class Api::ClipsController < ApplicationController
     end
 
     def destroy
-        @clip = Clip.find_by(id: param[:id])
+        @clip = Clip.find_by(id: params[:id])
     end
 
     private
