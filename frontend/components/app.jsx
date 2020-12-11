@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util'
 
 import Modal from './modal/modal';
@@ -17,6 +17,7 @@ const App = () => {
             <AuthRoute path="/login" component={LoginContainer}/> */}
             <Switch>
                 <Route exact path="/" component={SplashContainer}/>
+                <Redirect to="/" />
             </Switch>
         </div>
     )
