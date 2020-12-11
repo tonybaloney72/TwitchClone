@@ -1,4 +1,5 @@
 import React from 'react';
+import ClipFormContainer from '../clips/clip_form_container';
 import { Link } from 'react-router-dom';
 
 const Splash = ({ currentUser, logout }) => {
@@ -13,6 +14,7 @@ const Splash = ({ currentUser, logout }) => {
     const userGreeting = () => (
         <div className="greeting">
             <h3>Well met, {currentUser.username}!</h3>
+            <div><ClipFormContainer /></div>
         </div>
     )
     

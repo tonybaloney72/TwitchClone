@@ -1,0 +1,63 @@
+.clip-submit-form {
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input:focus {
+        border: 2px solid #772CE8;
+        background: white;
+    }
+
+    form input#text {
+        // width: 200px;
+        height: 20px;
+        padding-left: 10px;
+        border-radius: 6px;
+        border: 2px solid rgb(209, 209, 209);
+        background: rgb(240, 240, 240)
+    }
+
+    form select {
+        // width: 200px;
+        // height: 24px;
+        border-radius: 6px;
+        border: 2px solid rgb(209, 209, 209);
+        background: rgb(240, 240, 240)
+    }
+
+    form input#file {
+        width: 200px;
+    }
+
+    // form input#file::-webkit-file-upload-button {
+        // visibility: hidden;
+    // }
+
+    form input#file::before {
+        content: 'Select a video file';
+        cursor: pointer;
+        // background: #9147FF
+    }
+
+    #clip-submit {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+        margin-top: 20px;
+        // font-weight: 100%;
+        background: #9147FF;
+        color: #ffffff;
+    }
+
+    #clip-submit:hover {
+        background: #772CE8;
+        color: #ffffff
+    }
+}
+
+.clip-preview video {
+    height: 320px;
+}

@@ -10,10 +10,12 @@ export const fetchClip = clipId => (
     })
 )
 
-export const postClip = clip => (
+export const postClip = formData => (
     $.ajax({
         url: "api/clips",
         method: 'POST',
-        data: { clip }
+        data: formData,
+        contentType: false,
+        processData: false
     })
 )

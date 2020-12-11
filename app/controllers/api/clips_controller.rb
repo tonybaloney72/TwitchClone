@@ -11,7 +11,7 @@ class Api::ClipsController < ApplicationController
     def create
         @clip = Clip.new(clip_params)
 
-        if @vod.save
+        if @clip.save
             render :show
         else
             render json: @clip.errors.full_messages

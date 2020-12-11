@@ -1,5 +1,6 @@
 class Clip < ApplicationRecord
-    validates :category, :channel_id, :title, presence: true
+    validates :channel_id, :title, presence: true
+    #:category
 
     belongs_to :channel,
     foreign_key: :channel_id,

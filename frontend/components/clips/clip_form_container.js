@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { submitClip } from '../../actions/clip_actions'
 import ClipForm from './clip_form';
 
 // const msp = state => ({
-//     stuff: state.something
+//     need to pass channel_id
 // })
 
-// const mdp = dispatch => ({
-//     action: some.action?
-// })
+const mdp = dispatch => ({
+    submitClip: formData => dispatch(submitClip(formData))
+})
 
-export default connect(msp, mdp)(ClipForm)
+export default withRouter(connect(null, mdp)(ClipForm))

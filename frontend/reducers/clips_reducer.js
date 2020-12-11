@@ -7,7 +7,7 @@ const ClipsReducer = (oldState = {}, action) => {
         case RECEIVE_CLIPS:
             return action.clips
         case RECEIVE_CLIP:
-            return Object.assign({}, oldState, action.clip)
+            return Object.assign({}, oldState, {[action.clip.id]: action.clip})
         default:
             return oldState
     }
