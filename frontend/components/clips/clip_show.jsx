@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class ClipShow extends React.Component {
     
@@ -9,12 +10,12 @@ class ClipShow extends React.Component {
     render() {
         if (this.props.clip === undefined) return null;
         return (
-            <div>
-                <h1>Show Page</h1>
-                <p>{this.props.clip.title}</p>
-                <video className="video" controls src={this.props.clip.video_clip}/>
+            <div className="clip-show">
+                <video className="video" controls autoplay muted src={this.props.clip.video_clip}/>
+                <h1 id="left-padding">{this.props.clip.title}</h1>
+                <h3 id="left-padding">{this.props.clip.category}</h3>
             </div>
-        )
+        ) // the h3 will be a <Link /> tag
     }
 }
 

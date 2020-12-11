@@ -1,0 +1,23 @@
+.clip-show {
+
+    .video {
+        height: 640px;
+        width: 100%;
+        outline: 0px;
+        min-height: 640px;
+        // overflow-y: scroll;
+        // overflow-x: scroll;
+        // position: absolute;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        // position: fixed;
+    }
+
+    #left-padding {
+        padding-left: 10px;
+    }
+}
