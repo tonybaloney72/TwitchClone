@@ -19,7 +19,9 @@
                 margin: 10px;
 
                 video {
+                    width: 30vw;
                     max-width: 400px;
+                    min-width: 240px;
                 }
             }
         }
