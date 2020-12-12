@@ -10,7 +10,7 @@ class Api::ClipsController < ApplicationController
 
     def create
         @clip = Clip.new(clip_params)
-        @clip.channel_id = Channel.first.id
+        @clip.user_id = User.first.id
         # remove this later ^
         
         if @clip.save
@@ -27,7 +27,7 @@ class Api::ClipsController < ApplicationController
     private
 
     def clip_params
-        params.require(:clip).permit(:channel_id, :category, :title, :video_clip)
+        params.require(:clip).permit(:user_id, :category, :title, :video_clip)
     end
 
 end
