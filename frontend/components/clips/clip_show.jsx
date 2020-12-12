@@ -11,7 +11,7 @@ class ClipShow extends React.Component {
         if (this.props.clip === undefined) return null;
         return (
             <div className="clip-show">
-                <video className="video" controls muted src={this.props.clip.video_clip}/>
+                <video className="video" controls muted autoPlay src={this.props.clip.video_clip}/>
                 <h1 id="left-padding">{this.props.clip.title}</h1>
                 <h3 id="left-padding">{this.props.clip.category}</h3>
             </div>

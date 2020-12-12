@@ -10374,3 +10374,6 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 266ms (Views: 265.5ms | ActiveRecord: 0.4ms)
 
 
+  [1m[36mClip Load (0.4ms)[0m  [1m[34mSELECT "clips".* FROM "clips"[0m
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT "clips".* FROM "clips"[0m
+  [1m[36mClip Load (0.3ms)[0m  [1m[34mSELECT "clips".* FROM "clips"[0m
