@@ -31,14 +31,9 @@
         width: 200px;
     }
 
-    // form input#file::-webkit-file-upload-button {
-        // visibility: hidden;
-    // }
-
     form input#file::before {
         content: 'Select a video file';
         cursor: pointer;
-        // background: #9147FF
     }
 
     #clip-submit {
@@ -47,7 +42,6 @@
         padding: 6px 8px;
         border-radius: 6px;
         margin-top: 20px;
-        // font-weight: 100%;
         background: #9147FF;
         color: #ffffff;
     }

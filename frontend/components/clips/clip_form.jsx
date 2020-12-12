@@ -9,8 +9,7 @@ class ClipForm extends React.Component {
             title: '',
             category: '',
             clipFile: null,
-            channel_id: 1, //hardcoding 1 for now
-            // channel_id: this.props.channelId get this from frontend routes when I set up channels eventually
+            user_id: this.props.userId
             clipURL: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,7 +20,7 @@ class ClipForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('clip[title]', this.state.title);
-        formData.append('clip[channel_id]', this.state.channel_id);
+        formData.append('clip[user_id]', this.state.user_id);
         formData.append('clip[category]', this.state.category);
         formData.append('clip[video_clip]', this.state.clipFile);
         this.props.submitClip(formData)
