@@ -10,8 +10,6 @@ const ClipItem = props => (
             <h4>{props.clip.title}</h4>
         </Link>
     </div>
-    
-
 )
 
 export default ClipItem;
