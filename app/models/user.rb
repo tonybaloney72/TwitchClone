@@ -5,10 +5,12 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    has_one :channel,
+    has_many :clips,
     foreign_key: :user_id,
-    class_name: :Channel,
+    class_name: :Clip,
     dependent: :destroy
+
+    has_one_attached :channel_photo
     
     before_validation :ensure_session_token!
   
