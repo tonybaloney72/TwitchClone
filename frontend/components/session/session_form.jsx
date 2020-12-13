@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
                         ) : (
                             <div id="modalForm">
                                 <p>{this.props.otherForm}</p>
-                                <button id="selected-form">{this.props.formType}</button>
+                                <button id="selected-form-two">{this.props.formType}</button>
                             </div>
                         )
                     }

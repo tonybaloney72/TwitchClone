@@ -7,6 +7,7 @@ import SplashContainer from './splash/splash_container'
 import NavBarContainer from './navbar/navbar_container'
 import ClipShowContainer from './clips/clip_show_container';
 import ClipFormContainer from './clips/clip_form_container';
+import CategoryContainer from './categories/category'
 
 // change '/upload' to AuthRoute
 
@@ -18,6 +19,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/upload" component={ClipFormContainer}/>
                 <Route exact path="/clips/:clipId" component={ClipShowContainer} />
+                <Route exact path="/categories/:categoryId" component={CategoryContainer} />
                 <Route exact path="/" component={SplashContainer}/>
                 <Redirect to="/" />
             </Switch>

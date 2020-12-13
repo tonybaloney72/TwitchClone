@@ -7,10 +7,22 @@
     height: 50px;
 
     .navleft {
+        display: flex;
+        align-items: center;
+
         img {
             width: 30px;
             height: 30px;
             margin: 10px;
+        }
+
+        .browse {
+            margin-left: 25px;
+
+            p {
+                font-size: 1.25em;
+                font-weight: 500;
+            }
         }
     }
 

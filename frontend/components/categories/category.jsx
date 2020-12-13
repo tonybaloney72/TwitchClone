@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-class Category extends React.Component {
-    //constructor, componentdidmount?
+const Category = props => (
+    <div className="category-item">
+        <Link to="">
+        <div className="category-image">
+            <img src={props.category.image}/>
+        </div>
+        </Link>
+        <Link to="">
+        <div className="category-title">
+            <h3>{props.category.title}</h3>
+        </div>
+        </Link>
+    </div>
+)
 
-    render() {
-        return (
-            //this.image?
-            //this.title?
-            //how do I display video clips related to category?
-            null;
-        )
-    }
-}
+export default Category;

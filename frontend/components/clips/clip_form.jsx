@@ -12,8 +12,14 @@ class ClipForm extends React.Component {
             userId: props.userId,
             clipURL: null
         }
+
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
+
+    }
+
+    componentDidMount() {
+        this.props.getCategories()
     }
     
     handleSubmit(e) {
@@ -71,10 +77,14 @@ class ClipForm extends React.Component {
                             />
                         </label>
                         <label><h4>Category</h4>
-                            <select
-                                value={this.state.category} //!this.state.category
-                                onChange={this.handleInput('category')}
-                            />
+                            <select onChange={this.handleInput('category')}>
+                                <option value="none" selected disabled hidden>Select a Category</option>
+                                {this.props.categories.map(category => (
+                                    <option key={category.id} category={category}>
+                                        {category.title}
+                                    </option>
+                                ))}
+                            </select>
                         </label>
                         <div className="upload-container">
                             <div className="upload-wrapper">
