@@ -1,57 +1,157 @@
-.clip-submit-form {
+.submit-form-parent {
+
+    display: flex;
+
+    .clip-submit-form {
+
+        margin-left: 40px;
+        margin-top: 40px;
+        max-width: 600px;
+        min-width: 480px;
+        width: 50vw;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            width: 400px;
+        }
+
+        input#text:focus {
+            border: 2px solid #772CE8;
+            background: white;
+        }
+
+        select:focus {
+            border: 2px solid #772CE8;
+            background: white;
+        }
+
+        form input#text {
+            width: 200px;
+            height: 20px;
+            padding-left: 10px;
+            border-radius: 6px;
+            border: 2px solid rgb(209, 209, 209);
+            background: rgb(240, 240, 240)
+        }
+
+        form select {
+            width: 150px;
+            height: 24px;
+            border-radius: 6px;
+            border: 2px solid rgb(209, 209, 209);
+            background: rgb(240, 240, 240)
+        }
+
+        #clip-submit {
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-top: 20px;
+            background: #9147FF;
+            color: #ffffff;
+            max-width: 50px;
+        }
+
+        #clip-submit:hover {
+            background: #772CE8;
+        }
+    }
+}
+
+.preview-box {
     
-    form {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-right: 40px;
+    max-width: 600px;
+    width: 50vw;
+    min-width: 480px;
+
+    .clip-preview {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
     }
 
-    form input:focus {
-        border: 2px solid #772CE8;
-        background: white;
-    }
-
-    form input#text {
-        // width: 200px;
-        height: 20px;
-        padding-left: 10px;
-        border-radius: 6px;
-        border: 2px solid rgb(209, 209, 209);
-        background: rgb(240, 240, 240)
-    }
-
-    form select {
-        // width: 200px;
-        // height: 24px;
-        border-radius: 6px;
-        border: 2px solid rgb(209, 209, 209);
-        background: rgb(240, 240, 240)
-    }
-
-    form input#file {
-        width: 200px;
-    }
-
-    form input#file::before {
-        content: 'Select a video file';
-        cursor: pointer;
-    }
-
-    #clip-submit {
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 6px 8px;
-        border-radius: 6px;
-        margin-top: 20px;
-        background: #9147FF;
-        color: #ffffff;
-    }
-
-    #clip-submit:hover {
-        background: #772CE8;
-        color: #ffffff
+    .clip-preview video {
+        max-height: 320px;
+        width: 100%;
+        min-width: 480px;
+        top: 0;
     }
 }
 
-.clip-preview video {
-    height: 320px;
+.upload-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
+  
+// input[type=file] {
+//       display: none;
+// }
+
+.upload-button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 6px 8px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: #9147FF;
+    color: #ffffff;
+    max-width: 100px;
+    cursor: pointer;
+    &:hover {background: #772CE8}
+}
+  
+.upload-wrapper input[type=file] {
+    font-size: 100px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+// #file {
+//     position: absolute;
+//     max-width: 100px;
+//     // opacity: 0;
+//     z-index: 1;
+//     height: 30px;
+//     top: 0;
+//     left: 0;
+//     margin: 25px 0;
+//     &:hover {cursor: pointer;}
+// }
+
+// #file:hover {
+//     cursor: pointer;
+// }
+
+// .upload-wrapper {
+//     position: relative;
+//     // overflow: hidden;
+//     // display: inline-block;
+// }
+  
+// .upload-button {
+//     font-size: 1rem;
+//     padding: 6px 8px;
+//     border-radius: 6px;
+//     margin-top: 20px;
+//     background: #9147FF;
+//     color: #ffffff;
+//     max-width: 100px;
+//     &:hover {
+//         cursor: pointer;
+//         background: #772CE8
+//     }
+// }
+  
+// input[type="file"]#file:hover {
+//     cursor: pointer;
+// }

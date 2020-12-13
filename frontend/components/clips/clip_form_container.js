@@ -4,7 +4,7 @@ import { submitClip } from '../../actions/clip_actions'
 import ClipForm from './clip_form';
 
 const msp = state => ({
-    userId = state.entities.session.currentUser
+    userId: state.session.currentUser
 })
 
 const mdp = dispatch => ({

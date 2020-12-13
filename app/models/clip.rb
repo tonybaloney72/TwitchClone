@@ -1,10 +1,10 @@
 class Clip < ApplicationRecord
-    validates :channel_id, :title, presence: true
+    validates :user_id, :title, presence: true
     #:category
 
-    belongs_to :channel,
-    foreign_key: :channel_id,
-    class_name: :Channel
+    belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User
 
     has_one_attached :video_clip
 

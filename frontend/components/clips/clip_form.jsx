@@ -9,7 +9,7 @@ class ClipForm extends React.Component {
             title: '',
             category: '',
             clipFile: null,
-            user_id: this.props.userId
+            userId: props.userId,
             clipURL: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,7 +20,7 @@ class ClipForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('clip[title]', this.state.title);
-        formData.append('clip[user_id]', this.state.user_id);
+        formData.append('clip[userId]', this.state.userId);
         formData.append('clip[category]', this.state.category);
         formData.append('clip[video_clip]', this.state.clipFile);
         this.props.submitClip(formData)
@@ -50,12 +50,12 @@ class ClipForm extends React.Component {
             if (this.state.clipURL) {
                 return (
                     <div className="clip-preview">
-                        <h4>Clip Preview</h4>
+                        <h3>Clip Preview</h3>
                         <video controls muted src={this.state.clipURL}/>
                     </div>
                 )
             } else {
-                return null;
+                return <h3 className="clip-preview">Preivew your clip here before submitting</h3>;
             }
         }
         return (
@@ -76,14 +76,20 @@ class ClipForm extends React.Component {
                                 onChange={this.handleInput('category')}
                             />
                         </label>
-                        <label><h4>Select a file</h4>
-                            <input id="file" type="file" onChange={this.handleFile}/>
-                        </label>
+                        <div className="upload-container">
+                            <div className="upload-wrapper">
+                                <label htmlFor="file-upload" className="upload-button">
+                                    Upload a clip
+                                </label>
+                                <input id="file-upload" type="file" onChange={this.handleFile}/>
+                            </div>
+                        </div>
                         <button id="clip-submit">Submit</button>
-                        {/* disable button */}
                     </form>
                 </div>
-                {preview()}
+                <div className="preview-box">
+                    {preview()}
+                </div>
             </div>
         )
     }

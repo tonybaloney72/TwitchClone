@@ -26,11 +26,11 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
                     <img className="menu" src={window.images.userPic} />
                     <div className="menu-content">
                         <ul>
-                            <Link onClick={logout}>
-                                <li><i class="fas fa-sign-out-alt fa-flip-horizontal fa-flip-vertical"></i> Log Out</li>
+                            <Link to ="/" onClick={logout}>
+                                <li><i className="fas fa-sign-out-alt fa-flip-horizontal fa-flip-vertical"></i> Log Out</li>
                             </Link>
                             <Link to="/upload">
-                                <li><i class="fas fa-arrow-circle-up"></i>  Upload a Clip</li>
+                                <li><i className="fas fa-arrow-circle-up"></i>  Upload a Clip</li>
                             </Link>
                         </ul>
                     </div>
