@@ -42,10 +42,12 @@ export const getClip = clipId => dispatch => (
 
 export const submitClip = clip => dispatch => (
     postClip(clip)
-        .then(clip => dispatch(receiveClip(clip))),
+        .then(clip => dispatch(receiveClip(clip)),
         error => dispatch(receiveErrors(error.responseJSON)))
+)
 
 export const deleteClip = clipId => dispatch => (
     destroyClip(clipId)
-        .then(clip => dispatch(removeClip(clip))),
+        .then(clip => dispatch(removeClip(clip)),
         error => dispatch(receiveErrors(error.responseJSON)))
+)

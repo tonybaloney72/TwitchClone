@@ -9,7 +9,7 @@ class ClipForm extends React.Component {
             title: '',
             category: '',
             clipFile: null,
-            userId: props.userId,
+            user_id: props.userId,
             clipURL: null
         }
 
@@ -26,9 +26,10 @@ class ClipForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('clip[title]', this.state.title);
-        formData.append('clip[userId]', this.state.userId);
+        formData.append('clip[user_id]', this.state.userId);
         formData.append('clip[category]', this.state.category);
-        formData.append('clip[video_clip]', this.state.clipFile);
+        if (this.state.clipFile) formData.append('clip[video_clip]', this.state.clipFile);
+        // debugger
         this.props.submitClip(formData)
             .then(response => {
                 (this.props.history.push(`/clips/${response.clip.id}`))
@@ -89,10 +90,10 @@ class ClipForm extends React.Component {
                             />
                         </label>
                         <label><h4>Category</h4>
-                            <select onChange={this.handleInput('category')}>
-                                <option value="none" selected disabled hidden>Select a Category</option>
+                            <select defaultValue="none" onChange={this.handleInput('category')}>
+                                <option value="none" disabled hidden>Select a Category</option>
                                 {this.props.categories.map(category => (
-                                    <option key={category.id} category={category}>
+                                    <option key={category.id} value={category.id}>
                                         {category.title}
                                     </option>
                                 ))}
