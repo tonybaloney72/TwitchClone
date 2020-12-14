@@ -19,3 +19,10 @@ export const postClip = formData => (
         processData: false
     })
 )
+
+export const destroyClip = clip => (
+    $.ajax({
+        method: 'DELETE',
+        url: `api/clips/${clipId}`
+    })
+)

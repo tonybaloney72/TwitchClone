@@ -4,7 +4,7 @@ import Category from './category';
 
 const msp = (state, ownProps) => ({
     categoryId: ownProps.match.params.categoryId,
-    category: state.entities.category[ownProps.match.params.categoryId]
+    category: state.entities.categories[ownProps.match.params.categoryId]
 })
 
 const mdp = dispatch => ({

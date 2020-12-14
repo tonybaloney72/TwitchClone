@@ -22,6 +22,10 @@ class Api::ClipsController < ApplicationController
 
     def destroy
         @clip = Clip.find_by(id: params[:id])
+        # @clip.video_clip.purge
+        # ActiveStorage::Attachment.find(params[:id])
+        # @clip.destroy
+        # render ???
     end
 
     private
