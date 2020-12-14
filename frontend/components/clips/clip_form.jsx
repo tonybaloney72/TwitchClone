@@ -50,6 +50,17 @@ class ClipForm extends React.Component {
             fileReader.readAsDataURL(file);
         }
     }
+
+    displayErrors() {
+        if (this.props.errors.length === 0) return null;
+        return (
+            <div className="clip-errors">
+                {this.props.errors.map( (el, idx) => (
+                    <div key={idx}>{el}</div>
+                ))}
+            </div>
+        )
+    }
     
     render() {
         const preview = () => {
@@ -69,10 +80,11 @@ class ClipForm extends React.Component {
                 <div className="clip-submit-form">
                     <form onSubmit={this.handleSubmit}>
                         <h3>Add a clip to your channel!</h3>
+                        {this.displayErrors()}
                         <label><h4>Title</h4>
                             <input id="text"
                                 type="text"
-                                value={this.state.title} //! this.state.title?
+                                value={this.state.title}
                                 onChange={this.handleInput('title')}
                             />
                         </label>

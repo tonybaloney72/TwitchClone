@@ -9,7 +9,7 @@ const clipErrorsReducer = (oldstate = [], action) => {
     switch(action.type) {
         case RECEIVE_CLIP_ERRORS:
             return action.errors;
-        // case RECEIVE_CURRENT_USER:
+        // case RECEIVE_CLIP:
         //     return [];
         case CLEAR_CLIP_ERRORS:
             return [];

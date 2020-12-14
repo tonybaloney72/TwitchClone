@@ -5,6 +5,7 @@ import { getCategories } from '../../actions/category_actions'
 import ClipForm from './clip_form';
 
 const msp = state => ({
+    errors: state.errors.clip,
     userId: state.session.currentUser,
     categories: Object.values(state.entities.categories)
 })
