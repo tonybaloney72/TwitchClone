@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import createStore from './store/store';
 import Root from './components/root';
 import configureStore from './store/store';
+import {deleteClip} from './actions/clip_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState;
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //testing
   window.store = store
+  window.deleteClip = deleteClip
   //done testing
   
   ReactDOM.render(<Root store={store} />, root);

@@ -9,8 +9,9 @@ const ClipsReducer = (oldState = {}, action) => {
         case RECEIVE_CLIP:
             return Object.assign({}, oldState, {[action.clip.id]: action.clip})
         case REMOVE_CLIP:
-            nextState = Object.assign({}, oldState);
-            delete nextState[action.clip.id]
+            let nextState = Object.assign({}, oldState);
+            debugger
+            delete nextState[action.clip]
             return nextState;
         default:
             return oldState
