@@ -1,6 +1,95 @@
-.greeting {
+.main-wrapper {
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+
+    .suggestions-wrapper {
+        #suggestions {
+            margin-left: 20px;
+        }
+
+        .clip-index {
+            display: flex;
+            // align-items: center;
+            margin: 10px 10px 3px 10px;
+            flex-wrap: wrap;
+
+            .clip-item-wrapper {
+
+                margin: 10px 10px 3px 10px;
+
+                video {
+                    width: 30vw;
+                    max-width: 400px;
+                    min-width: 240px;
+                }
+            }
+
+            .clip-item {
+
+                .clip-details {
+                    
+                    .title-link-category {
+
+                        h4 {
+                            margin-top: 4px;
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.clip {
+    position: relative;
+    display: inline-block;
+    background-color: #9147ff;
+}
+
+.clip:before,
+.clip:after {
+    content: '';
+    display: block;
+    background-color: #9147ff;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transition: all .15s ease;
+}
+
+.clip:before {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    // transform: rotate(-45deg) scale(0);
+}
+
+.clip:after {
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom right;
+    // transform: rotate(45deg) scale(0);
+}
+
+.clip-hover {
+    display: block;
+    transform: translate(0, 0);
+    transition: all .15s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.clip:hover .clip-hover {
+    transform: translate(6px, -6px);
+}
+
+.clip:hover:before {
+    transform: rotate(-45deg) scale(1);
+}
+
+.clip:hover:after {
+    transform: rotate(45deg) scale(1);
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_004830) do
+ActiveRecord::Schema.define(version: 2020_12_12_170126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,21 +43,13 @@ ActiveRecord::Schema.define(version: 2020_12_10_004830) do
     t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
-  create_table "channels", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_channels_on_user_id", unique: true
-  end
-
   create_table "clips", force: :cascade do |t|
-    t.integer "channel_id", null: false
+    t.integer "user_id", null: false
     t.string "category", null: false
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["channel_id"], name: "index_clips_on_channel_id"
+    t.index ["user_id"], name: "index_clips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

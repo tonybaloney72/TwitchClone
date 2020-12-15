@@ -1,4 +1,4 @@
-import { RECEIVE_CLIP, RECEIVE_CLIPS } from '../actions/clip_actions'
+import { RECEIVE_CLIP, RECEIVE_CLIPS, REMOVE_CLIP } from '../actions/clip_actions'
 
 const ClipsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -8,6 +8,11 @@ const ClipsReducer = (oldState = {}, action) => {
             return action.clips
         case RECEIVE_CLIP:
             return Object.assign({}, oldState, {[action.clip.id]: action.clip})
+        case REMOVE_CLIP:
+            let nextState = Object.assign({}, oldState);
+            debugger
+            delete nextState[action.clip]
+            return nextState;
         default:
             return oldState
     }

@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            channel_photo: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,7 +64,7 @@ class SessionForm extends React.Component {
                         ) : (
                             <div id="modalForm">
                                 <p>{this.props.otherForm}</p>
-                                <button id="selected-form">{this.props.formType}</button>
+                                <button id="selected-form-two">{this.props.formType}</button>
                             </div>
                         )
                     }

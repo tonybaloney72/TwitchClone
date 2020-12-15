@@ -1,16 +1,20 @@
 import React from 'react';
+import Category from './category';
 
 class Categories extends React.Component {
 
     //constructor?
 
-    //componentdidmount?
+    componentDidMount() {
+        this.props.getCategories()
+    }
 
     render() {
+        if (this.props.categories === undefined) return null;
         return (
             <div>
                 {this.props.categories.map(category => {
-                    <Category /> //link to <Category/>?
+                    <Category category={category}/>
                 })}
             </div>
         )

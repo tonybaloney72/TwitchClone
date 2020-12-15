@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { submitClip } from '../../actions/clip_actions'
+import { getCategories, getCategory } from '../../actions/category_actions'
 import ClipForm from './clip_form';
 
-// const msp = state => ({
-//     need to pass channel_id
-// })
-
-const mdp = dispatch => ({
-    submitClip: formData => dispatch(submitClip(formData))
+const msp = state => ({
+    errors: state.errors.clip,
+    userId: state.session.currentUser,
+    categories: Object.values(state.entities.categories)
 })
 
-export default withRouter(connect(null, mdp)(ClipForm))
+const mdp = dispatch => ({
+    submitClip: formData => dispatch(submitClip(formData)),
+    getCategories: () => dispatch(getCategories())
+})
+
+export default withRouter(connect(msp, mdp)(ClipForm))
