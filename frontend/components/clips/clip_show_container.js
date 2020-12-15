@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { getClip, deleteClip } from '../../actions/clip_actions'
 import { getCategories, getCategory } from '../../actions/category_actions'
 import Clip from './clip_show'
@@ -15,4 +16,4 @@ const mdp = dispatch => ({
     getCategories: () => dispatch(getCategories())
 })
 
-export default connect(msp, mdp)(Clip)
+export default withRouter(connect(msp, mdp)(Clip))

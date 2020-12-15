@@ -7,7 +7,7 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
         <div className="navbar">
             <div className="navleft">
                 <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
-                <Link className="browse" to="/directory"><p>Browse</p></Link>
+                {/* <Link className="browse" to="/directory"><p>Browse</p></Link> */}
             </div>
             <div className="navright">
                 <button className="sessionbutton" id="login" onClick={() => { clearErrors(); openModal('Log In'); }}>Log In</button>

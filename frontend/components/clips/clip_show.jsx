@@ -17,6 +17,7 @@ class ClipShow extends React.Component {
 
     removeClip() {
         this.props.deleteClip(this.props.clip.id)
+            .then(this.props.history.push('/'))
     }
 
     render() {
