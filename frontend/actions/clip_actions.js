@@ -46,10 +46,8 @@ export const submitClip = clip => dispatch => (
         error => dispatch(receiveErrors(error.responseJSON)))
 )
 
-    export const deleteClip = clip => dispatch => {
-        // debugger
-        return (
+export const deleteClip = clip => dispatch => (
     destroyClip(clip)
         .then(clip => dispatch(removeClip(clip)),
         error => dispatch(receiveErrors(error.responseJSON)))
-    )}
+    )

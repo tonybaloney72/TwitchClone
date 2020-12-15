@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { submitClip } from '../../actions/clip_actions'
-import { getCategories } from '../../actions/category_actions'
+import { getCategories, getCategory } from '../../actions/category_actions'
 import ClipForm from './clip_form';
 
 const msp = state => ({

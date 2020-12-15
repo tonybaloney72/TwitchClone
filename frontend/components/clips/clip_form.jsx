@@ -29,7 +29,6 @@ class ClipForm extends React.Component {
         formData.append('clip[user_id]', this.state.userId);
         formData.append('clip[category]', this.state.category);
         if (this.state.clipFile) formData.append('clip[video_clip]', this.state.clipFile);
-        // debugger
         this.props.submitClip(formData)
             .then(response => {
                 (this.props.history.push(`/clips/${response.clip.id}`))
@@ -93,7 +92,7 @@ class ClipForm extends React.Component {
                             <select defaultValue="none" onChange={this.handleInput('category')}>
                                 <option value="none" disabled hidden>Select a Category</option>
                                 {this.props.categories.map(category => (
-                                    <option key={category.id} category={category}>
+                                    <option key={category.id} value={category.id}>
                                         {category.title}
                                     </option>
                                 ))}

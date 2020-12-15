@@ -11,11 +11,13 @@ class Category extends React.Component {
         if (this.props.category === undefined) return null;
         return (
             <div className="category-item">
-                <div className="category-image">
-                    <img src={this.props.category.image}/>
-                </div>
-                <div className="category-title">
-                    <h3>{this.props.category.title}</h3>
+                <div className="category-header">
+                    <div className="category-image">
+                        <img src={this.props.category.image}/>
+                    </div>
+                    <div className="category-title">
+                        <h3>{this.props.category.title}</h3>
+                    </div>
                 </div>
             </div>
         )
