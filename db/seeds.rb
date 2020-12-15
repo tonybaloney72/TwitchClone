@@ -1,5 +1,3 @@
-#hunt.image.attach(io: File.open("/mnt/c/Users/TonyB/Documents/Switch-Data/Categories/Hunt_Showdown.jpg"), filename: "Hunt_Showdown.jpg")
-
 require 'open-uri'
 
 User.delete_all
@@ -24,14 +22,14 @@ hearth = Category.create({title: 'Hearthstone'})
 sot = Category.create({title: 'Sea of Thieves'})
 
 hunt_file = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Hunt_Showdown.jpg')
-among = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Among_Us.jpg')
-hearth = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Hearthstone.jpg')
-sot = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Sea_of_Thieves.jpg')
+among_file = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Among_Us.jpg')
+hearth_file = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Hearthstone.jpg')
+sot_file = open('https://switch-seeds.s3-us-west-1.amazonaws.com/Sea_of_Thieves.jpg')
 
 hunt.image.attach(io: hunt_file, filename: 'Hunt_Showdown.jpg')
-among.image.attach(io: among, filename:'Among_Us.jpg')
-hearth.image.attach(io: hearth, filename: 'Hearthstone.jpg')
-sot.image.attach(io: sot, filename: 'Sea_of_Thieves.jpg')
+among.image.attach(io: among_file, filename:'Among_Us.jpg')
+hearth.image.attach(io: hearth_file, filename: 'Hearthstone.jpg')
+sot.image.attach(io: sot_file, filename: 'Sea_of_Thieves.jpg')
 
 
 
