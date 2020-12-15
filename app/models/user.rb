@@ -11,6 +11,10 @@ class User < ApplicationRecord
     dependent: :destroy
 
     has_one_attached :channel_photo
+
+    has_many :messages,
+    foreign_key: :user_id,
+    class_name: :Message
     
     before_validation :ensure_session_token!
   
