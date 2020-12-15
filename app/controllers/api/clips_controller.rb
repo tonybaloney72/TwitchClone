@@ -1,5 +1,7 @@
 class Api::ClipsController < ApplicationController
 
+    before_action :require_logged_in!, only: [:create, :destroy]
+
     def index
         @clips = Clip.all()
     end
@@ -22,8 +24,6 @@ class Api::ClipsController < ApplicationController
 
     def destroy
         @clip = Clip.find_by(id: params[:id])
-        # @clip.video_clip.purge
-        # ActiveStorage::Attachment.find(params[:id])
         @clip.destroy
         render json: @clip.id
     end
