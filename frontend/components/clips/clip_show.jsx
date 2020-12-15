@@ -19,28 +19,15 @@ class ClipShow extends React.Component {
         this.props.deleteClip(this.props.clip.id)
     }
 
-    getCat() {
-        if (!this.state.category) {
-            return null
-         } else {
-            return (
-                <div className="category-link">
-                    <Link to={`/categories/${this.props.clip.category}`}><h3 id="left-padding">{this.state.category.categories[this.props.clip.category].title}</h3></Link>
-                </div>
-            )
-         }
-    }
-
     render() {
         if (this.props.clip === undefined) return null;
-        // debugger
         return (
             <div className="clip-show">
-                {/* <video className="video" controls muted src={this.props.clip.video_clip}/> */}
+                <video className="video" controls muted src={this.props.clip.video_clip}/>
                 <div className="information">
                     <div className="left-side">
                         <h1 id="left-padding">{this.props.clip.title}</h1>
-                        {this.getCat()}
+                        <h3 id="left-padding">{this.props.clip.category}</h3>
                     </div>
                     <div className="right-side">
                         {
@@ -53,7 +40,7 @@ class ClipShow extends React.Component {
                     </div>
                 </div>
             </div>
-        ) // the h3 category will be a <Link /> tag
+        )
     }
 }
 

@@ -4,6 +4,10 @@ import ClipItem from './clip_index_item';
 class ClipIndex extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            category: null
+        }
     }
 
     componentDidMount() {

@@ -16,7 +16,6 @@ const ClipItem = props => (
                 <Link to={`clips/${props.clip.id}`}>
                     <h4>{props.clip.title}</h4>
                 </Link>
-                    {/* <p>{props.clip.user_id}</p> */}
                     <p>{props.clip.category}</p>
                 </div>
             </div>

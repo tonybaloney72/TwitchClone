@@ -21,7 +21,6 @@ export const postClip = formData => (
 )
 
 export const destroyClip = clip => {
-    // debugger
     return (
     $.ajax({
         url: `api/clips/${clip}`,

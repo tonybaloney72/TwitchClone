@@ -92,7 +92,7 @@ class ClipForm extends React.Component {
                             <select defaultValue="none" onChange={this.handleInput('category')}>
                                 <option value="none" disabled hidden>Select a Category</option>
                                 {this.props.categories.map(category => (
-                                    <option key={category.id} value={category.id}>
+                                    <option key={category.id} value={category.title}>
                                         {category.title}
                                     </option>
                                 ))}
