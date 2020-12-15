@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { AuthRoute } from '../utils/route_util'
+import { AuthRoute, ProtectedRoute } from '../utils/route_util'
 
 import Modal from './modal/modal';
 import SplashContainer from './splash/splash_container'
@@ -18,7 +18,7 @@ const App = () => {
             <Modal />
             <NavBarContainer />
             <Switch>
-                <Route exact path="/upload" component={ClipFormContainer}/>
+                <ProtectedRoute exact path="/upload" component={ClipFormContainer}/>
                 <Route exact path="/clips/:clipId" component={ClipShowContainer} />
                 <Route exact path="/categories/:categoryId" component={CategoryContainer} />
                 <Route exact path="/directory" component={Directory}/>
