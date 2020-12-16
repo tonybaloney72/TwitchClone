@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :clips, only: [:create, :destroy, :show, :index]
     resources :channels, only: [:show, :index]
     resources :categories, only: [:index, :show]
+    resources :messages, only: [:show]
   end
 
   root "static_pages#root"

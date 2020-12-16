@@ -22,6 +22,7 @@ class ClipIndex extends React.Component {
                 <div className="clip-index">
                 {this.props.clips.map(clip => (
                     <div className="clip-item-wrapper" key={clip.id} >
+                        {this.get}
                         <ClipItem clip={clip}/>
                     </div>
                 ))}

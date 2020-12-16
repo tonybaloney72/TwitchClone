@@ -13,6 +13,29 @@ fresh_goat = User.create({email: 'thirduser@email.com', username: 'FreshGoat', p
 its_ufah = User.create({email: 'thirduser@email.com', username: 'itsUfah', password: 'itshafu'})
 six_up = User.create({email: 'thirduser@email.com', username: '6uuup', password: '5up321'})
 zjvas = User.create({email: 'thirduser@email.com', username: 'Zjvas', password: 'savjz8'})
+justblap = User.create({email: 'different@email.com', username: 'JustBlap', password: 'bleeblap'})
+
+demo_user_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/generic-user-logo.png')
+tonybaloney_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/generic-user-logo.png')
+justblap_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/justbree.png')
+the_hermit_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/gfh.png')
+jessicas_dad_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/neenoh.png')
+zorngeist_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/psychoghost.jpeg')
+fresh_goat_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/boxyfresh.png')
+its_ufah_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/hafu.png')
+six_up_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/5up.png')
+zjvas_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/savjz.jpeg')
+
+demo_user_image.channel_photo.attach(io: demo_user_image, filename: 'generic-user-logo.png')
+tonybaloney_image.channel_photo.attach(io: tonybaloney_image, filename: 'generic-user-logo.png')
+justblap.channel_photo.attach(io: justblap_image, filename: 'justbree.png')
+the_hermit.channel_photo.attach(io: the_hermit_image, filename: 'gfh.png')
+jessicas_dad.channel_photo.attach(io: jessicas_dad_image, filename: 'neenoh.png')
+zorngeist.channel_photo.attach(io: zorngeist_image, filename: 'psychoghost.jpeg')
+fresh_goat.channel_photo.attach(io: fresh_goat_image, filename: 'boxyfresh.png')
+its_ufah.channel_photo.attach(io: its_ufah_image, filename: 'hafu.png')
+six_up.channel_photo.attach(io: six_up_image, filename: '5up.png')
+zjvas.channel_photo.attach(io: zjvas_image, filename: 'savjz.jpeg')
 
 
 

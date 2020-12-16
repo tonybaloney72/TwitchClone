@@ -10,16 +10,16 @@ const ClipItem = props => (
         </Link>
             <div className="clip-details">
                 <div className="clip-channel-image">
-                    {/* <img src={getUser(props.clip.user_id).channel_photo} /> */}
+                    <img src={props.clip.channel_photo}/>
                 </div>
                 <div className="title-link-category">
                 <Link to={`clips/${props.clip.id}`}>
                     <h4>{props.clip.title}</h4>
                 </Link>
+                    <h5>{props.clip.username}</h5>
                     <p>{props.clip.category}</p>
                 </div>
             </div>
-        
     </div>
 )
 

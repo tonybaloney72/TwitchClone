@@ -15,12 +15,12 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        @user = User.all()
+        @users = User.all()
     end
     
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password) #:channel_photo
+        params.require(:user).permit(:username, :email, :password, :channel_photo) #:channel_photo
     end
 end

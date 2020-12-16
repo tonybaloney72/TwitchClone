@@ -26,18 +26,20 @@ class ClipShow extends React.Component {
             <div className="clip-show">
                 <video className="video" controls muted src={this.props.clip.video_clip}/>
                 <div className="information">
-                    <div className="left-side">
-                        <h1 id="left-padding">{this.props.clip.title}</h1>
-                        <h3 id="left-padding">{this.props.clip.category}</h3>
-                    </div>
-                    <div className="right-side">
-                        {
-                            this.props.currentUser === this.props.clip.user_id ? (
-                                <div>
-                                    <button className="delete-button" onClick={() => this.removeClip()}>Delete Clip</button>
-                                </div>
-                            ) : null
-                        }
+                    <div className="info-margin">
+                        <div className="left-side">
+                            <h1 id="left-padding">{this.props.clip.title}</h1>
+                            <h3 id="left-padding">{this.props.clip.category}</h3>
+                        </div>
+                        <div className="right-side">
+                            {
+                                this.props.currentUser === this.props.clip.user_id ? (
+                                    <div>
+                                        <button className="delete-button" onClick={() => this.removeClip()}>Delete Clip</button>
+                                    </div>
+                                ) : null
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
