@@ -26,8 +26,8 @@ its_ufah_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_p
 six_up_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/5up.png')
 zjvas_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/savjz.jpeg')
 
-demo_user_image.channel_photo.attach(io: demo_user_image, filename: 'generic-user-logo.png')
-tonybaloney_image.channel_photo.attach(io: tonybaloney_image, filename: 'generic-user-logo.png')
+demo_user.channel_photo.attach(io: demo_user_image, filename: 'generic-user-logo.png')
+tonybaloney.channel_photo.attach(io: tonybaloney_image, filename: 'generic-user-logo.png')
 justblap.channel_photo.attach(io: justblap_image, filename: 'justbree.png')
 the_hermit.channel_photo.attach(io: the_hermit_image, filename: 'gfh.png')
 jessicas_dad.channel_photo.attach(io: jessicas_dad_image, filename: 'neenoh.png')
