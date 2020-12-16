@@ -6,15 +6,15 @@ class Api::MessagesController < ApplicationController
         @messages = Message.all()
     end
 
-    def create
-        @message = Message.new(message_params)
+    # def create
+    #     @message = Message.new(message_params)
 
-        if @message.save
-            render :show
-        else
-            render :json @message.errors.full_messages, status: 403
-        end
-    end
+    #     if @message.save
+    #         render :show
+    #     else
+    #         render :json @message.errors.full_messages, status: 403
+    #     end
+    # end
 
     private
     
