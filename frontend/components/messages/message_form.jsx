@@ -13,11 +13,25 @@ class MessageForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentDidMount() {
+        if (this.props.currentUser === undefined) {
+            return null
+        } else {
+            this.setState({user_id: this.props.currentUser.id})
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.submitMessage(this.state)
-        this.setState({body: ''})
-        e.target.value = ''
+        if (this.props.userId === null) {
+            this.props.openModal('Sign Up')
+            this.setState({body: ''})
+            e.target.value = ''
+        } else {
+            this.props.submitMessage(this.state)
+            this.setState({body: ''})
+            e.target.value = ''
+        }
     }
 
     handleInput(field) {

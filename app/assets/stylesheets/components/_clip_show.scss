@@ -154,6 +154,11 @@
                             background: rgb(240, 240, 240)
                         }
 
+                        input:focus {
+                            border: 2px solid #772CE8;
+                            background: white;
+                        }
+
                         .message-submit {
 
                             background: #9147FF;

@@ -3,7 +3,8 @@ class Api::MessagesController < ApplicationController
     # before_action :require_logged_in!, only: [:create]
 
     def index
-        @messages = Message.all()
+        @clip = Clip.find(params[:clip_id])
+        @clip_messages = @clip.messages
     end
 
     def show

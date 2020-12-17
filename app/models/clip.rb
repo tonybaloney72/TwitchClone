@@ -5,6 +5,10 @@ class Clip < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
+    has_many :messages,
+    foreign_key: :clip_id,
+    class_name: :Message
+
     has_one_attached :video_clip
 
 end

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { signup, clearErrors } from '../../actions/session_actions';
+import { signup, login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form'
 

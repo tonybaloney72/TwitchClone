@@ -1,4 +1,4 @@
-@messages.each do |message|
+@clip_messages.each do |message|
     json.set! message.id do
         json.id message.id
         json.user_id message.user_id
