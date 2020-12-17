@@ -11,9 +11,9 @@ const Chat = () => {
             <div className="chat-messages-display-wrapper">
                 <MessageIndexContainer />
             </div>
-            {/* <div className="form-display-wrapper">
+            <div className="form-display-wrapper">
                 <MessageFormContainer />
-            </div> */}
+            </div>
         </div>
     )
 }
