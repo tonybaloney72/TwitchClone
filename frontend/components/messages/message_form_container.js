@@ -1,14 +1,16 @@
 import { connect } from 'react-redux'
 import MessageForm from './message_form'
 import { submitMessage } from '../../actions/message_actions'
+import { withRouter }  from 'react-router-dom';
 
-const msp = (state, ownProps) => ({
-    userId: state.session.currentUser,
-    clipId: ownProps.match.params.clipId
+const msp = state => ({
+    userId: state.session.currentUser
 })
 
-const mdp = dispatch => ({
-    submitMessage: message => dispatch(submitMessage(message))
-})
+const mdp = dispatch => {
+    return ({
+        submitMessage: message => dispatch(submitMessage(message))
+    })
+}
 
-export default connect(msp, mdp)(MessageForm)
+export default withRouter(connect(msp, mdp)(MessageForm))

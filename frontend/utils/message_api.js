@@ -1,12 +1,18 @@
-export const fetchMessage = messageId => (
+export const fetchMessages = clip_id => (
     $.ajax({
-        url: `api/messages/${messageId}`,
+        url: `api/clips/${clip_id}/messages/`,
+    })
+)
+
+export const fetchMessage = message => (
+    $.ajax({
+        url: `api/clips/${message.clip_id}/messages/${message.id}`,
     })
 )
 
 export const postMessage = message  => {
     return $.ajax({
-        url: "api/messages",
+        url: `api/clips/${message.clip_id}/messages`,
         method: 'POST',
         data: { message }
     })

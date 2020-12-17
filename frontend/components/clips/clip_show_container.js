@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getClip, deleteClip } from '../../actions/clip_actions'
-import { getCategories, getCategory } from '../../actions/category_actions'
+import { getCategories } from '../../actions/category_actions'
 import Clip from './clip_show'
+import { clearMessages } from '../../actions/message_actions';
 
 const msp = (state, ownProps) => ({
     clipId: ownProps.match.params.clipId,
@@ -13,7 +14,8 @@ const msp = (state, ownProps) => ({
 const mdp = dispatch => ({
     getClip: clipId => dispatch(getClip(clipId)),
     deleteClip: clip => dispatch(deleteClip(clip)),
-    getCategories: () => dispatch(getCategories())
+    getCategories: () => dispatch(getCategories()),
+    // clearMessages: () => dispatch(clearMessages)
 })
 
 export default withRouter(connect(msp, mdp)(Clip))
