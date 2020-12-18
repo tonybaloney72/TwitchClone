@@ -28,7 +28,10 @@ Switch-tv is a video sharing website designed as a Twitch clone. The user can cr
 ## Features
 
 * Upload videos
+<img src="app/assets/images/upload-form.png?raw=true">
+<img src="app/assets/images/upload-form-preview.png?raw=true">
 * Delete videos that you uploaded
+<img src="app/assets/images/delete-own-clip.png?raw=true">
 * Participate in chat
 
 ## Tech Specs
