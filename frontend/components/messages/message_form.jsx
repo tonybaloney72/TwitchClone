@@ -6,19 +6,9 @@ class MessageForm extends React.Component {
 
         this.state = {
             body: '',
-            user_id: props.userId,
-            clip_id: props.match.params.clipId
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
-    }
-
-    componentDidMount() {
-        if (this.props.currentUser === undefined) {
-            return null
-        } else {
-            this.setState({user_id: this.props.currentUser.id})
-        }
     }
 
     handleSubmit(e) {
@@ -28,7 +18,15 @@ class MessageForm extends React.Component {
             this.setState({body: ''})
             e.target.value = ''
         } else {
-            this.props.submitMessage(this.state)
+            let user_id = this.props.userId
+            let clip_id = this.props.match.params.clipId
+            let body = this.state.body
+            let new_obj = {
+                user_id,
+                clip_id,
+                body
+            }
+            this.props.submitMessage(new_obj)
             this.setState({body: ''})
             e.target.value = ''
         }

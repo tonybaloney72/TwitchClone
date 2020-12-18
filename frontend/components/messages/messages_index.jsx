@@ -22,8 +22,8 @@ class MessageIndex extends React.Component {
 
     componentDidUpdate() {
         this.scrollToBottom();
-        // this.setState({chat: [...this.state.chat]})
     }
+    // this.setState({chat: [...this.state.chat]})
 
     scrollToBottom() {
         this.messagesEnd.scrollIntoView({ behavior: 'smooth' })
