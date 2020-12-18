@@ -26,7 +26,9 @@ class ClipShow extends React.Component {
         return (
             <div className="clip-chat-wrapper">
                 <div className="clip-show">
-                    <video className="video" controls muted src={this.props.clip.video_clip}/>
+                    <div className="video-black-background">
+                        <video className="video" controls muted src={this.props.clip.video_clip}/>
+                    </div>
                     <div className="information">
                         <div className="info-margin">
                             <div className="left-side">
