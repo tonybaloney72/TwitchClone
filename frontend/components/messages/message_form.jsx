@@ -13,22 +13,15 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.props.userId === null) {
+        if (!this.props.userId) {
             this.props.openModal('Sign Up')
-            this.setState({body: ''})
-            e.target.value = ''
         } else {
-            let user_id = this.props.userId
-            let clip_id = this.props.match.params.clipId
-            let body = this.state.body
-            let new_obj = {
-                user_id,
-                clip_id,
-                body
+            let data = {
+                user_id: this.props.userId,
+                clip_id: this.props.match.params.clipId
             }
-            this.props.submitMessage(new_obj)
+            App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body, clip_id: data.clip_id, user_id: data.user_id });
             this.setState({body: ''})
-            e.target.value = ''
         }
     }
 

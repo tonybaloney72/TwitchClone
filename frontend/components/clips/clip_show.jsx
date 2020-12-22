@@ -1,6 +1,5 @@
 import React from 'react';
-import Chat from '../messages/chat_index_form_wrapper'
-import { Link } from 'react-router-dom'
+// import ChatRoom from '../messages/chat_room'
 
 class ClipShow extends React.Component {
     constructor(props) {
@@ -27,7 +26,7 @@ class ClipShow extends React.Component {
             <div className="clip-chat-wrapper">
                 <div className="clip-show">
                     <div className="video-black-background">
-                        <video className="video" controls muted src={this.props.clip.video_clip}/>
+                        {/* <video className="video" controls muted src={this.props.clip.video_clip}/> */}
                     </div>
                     <div className="information">
                         <div className="info-margin">
@@ -54,7 +53,7 @@ class ClipShow extends React.Component {
                     </div>
                 </div>
                 <div className="chat-show">
-                    <Chat />
+                    {/* <ChatRoom clipId={this.props.clipId}/> */}
                 </div>
             </div>
         )
