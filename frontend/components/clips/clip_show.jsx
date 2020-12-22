@@ -1,5 +1,5 @@
 import React from 'react';
-// import ChatRoom from '../messages/chat_room'
+import ChatRoom from '../messages/chat_room'
 
 class ClipShow extends React.Component {
     constructor(props) {
@@ -13,6 +13,12 @@ class ClipShow extends React.Component {
     componentDidMount() {
         this.props.getCategories().then(res => this.setState({category: res}))
         this.props.getClip(this.props.clipId)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.clipId !== this.props.clipId) {
+            this.props.getClip(this.props.clipId)
+        }
     }
 
     removeClip() {
@@ -53,7 +59,7 @@ class ClipShow extends React.Component {
                     </div>
                 </div>
                 <div className="chat-show">
-                    {/* <ChatRoom clipId={this.props.clipId}/> */}
+                    <ChatRoom clipId={this.props.clipId}/>
                 </div>
             </div>
         )

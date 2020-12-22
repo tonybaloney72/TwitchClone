@@ -24,30 +24,6 @@ class ChatRoom extends React.Component {
     );
   }
   
-  // componentDidUpdate(prevProps) {
-  //   if (this.bottom.current !== null) {
-  //     this.bottom.current.scrollIntoView({ behavior: 'smooth'});
-  //   }
-
-  //   if (prevProps.clipId !== this.props.clipId) {
-  //     this.setState({ messages: [] })
-      // App.cable.disconnect()
-      // App.cable.subscriptions.create(
-      //   { channel: "ChatChannel", id: this.props.clipId },
-      //   {
-      //     received: data => {
-      //       this.setState({
-      //         messages: this.state.messages.concat([data])
-      //       });
-      //     },
-      //     speak: function(data) {
-      //       return this.perform("speak", data);
-      //     }
-      //   }
-      // );
-  //   }
-  // }
-  
   render() {
     const messageList = this.state.messages.map( (message, idx) => {
       return (
