@@ -32,7 +32,7 @@ Switch-tv is a video sharing website designed as a Twitch clone. The user can cr
 <img src="app/assets/images/upload-form-preview.png?raw=true">
 * Delete videos that you uploaded
 <img src="app/assets/images/delete-own-clip.png?raw=true">
-* Participate in chat
+* Participate in live chat!
 
 ## Tech Specs
 
@@ -45,8 +45,6 @@ Switch-tv is a video sharing website designed as a Twitch clone. The user can cr
 ## Todo
 
 * Add video carousel to landing/home page
-* Add live chat using Action Cable
-    * add color randomizer for usernames in chat
 * Add user show page/User's "channel"
 * Add left navbar for navigating recommended channels/followed channels
 * Add /directory to browse channels and video clips

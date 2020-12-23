@@ -24,7 +24,7 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
             </div>
             <div className="navright">
                 <div className="dropdown">
-                    <img className="menu" src={window.images.userPic} />
+                    <img className="menu" src={currentUser.channel_photo} />
                     <div className="menu-content">
                         <ul>
                             <Link onClick={logout}>
@@ -39,6 +39,7 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
             </div>
         </div>
     )
+    
     return currentUser ? logged_in() : logged_out()
 
 }
