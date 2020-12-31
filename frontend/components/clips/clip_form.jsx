@@ -68,7 +68,7 @@ class ClipForm extends React.Component {
                 return (
                     <div className="clip-preview">
                         <h3>Clip Preview</h3>
-                        <video controls muted src={this.state.clipURL}/>
+                        <video type="video/mp4" controls muted src={this.state.clipURL}/>
                     </div>
                 )
             } else {
