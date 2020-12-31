@@ -32,7 +32,7 @@ class ClipShow extends React.Component {
             <div className="clip-chat-wrapper">
                 <div className="clip-show">
                     <div className="video-black-background">
-                        {/* <video className="video" controls muted src={this.props.clip.video_clip}/> */}
+                        <video className="video" type="video/mp4" controls muted src={this.props.clip.video_clip}/>
                     </div>
                     <div className="information">
                         <div className="info-margin">

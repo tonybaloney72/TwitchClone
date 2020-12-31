@@ -5,7 +5,7 @@ const ClipItem = props => (
     <div className="clip-item">
         <Link to={`clips/${props.clip.id}`}>
             <div className="clip">
-                <video className="clip-hover" src={props.clip.video_clip}/>
+                <video className="clip-hover" type="video/mp4" src={props.clip.video_clip}/>
             </div>
         </Link>
             <div className="clip-details">
