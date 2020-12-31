@@ -26,7 +26,7 @@ class ClipForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('clip[title]', this.state.title);
-        formData.append('clip[user_id]', this.state.userId);
+        formData.append('clip[user_id]', this.props.userId);
         formData.append('clip[category]', this.state.category);
         if (this.state.clipFile) formData.append('clip[video_clip]', this.state.clipFile);
         this.props.submitClip(formData)

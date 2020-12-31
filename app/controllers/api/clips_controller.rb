@@ -1,6 +1,6 @@
 class Api::ClipsController < ApplicationController
 
-    before_action :require_logged_in!, only: [:create, :destroy]
+    before_action :require_logged_in, only: [:create, :destroy]
 
     def index
         @clips = Clip.all()
