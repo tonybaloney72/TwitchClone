@@ -16,7 +16,7 @@
 
 * ... -->
 
-<center> <h1>Switch-tv</h1> </center>
+<h1 align="center">Switch-tv</h1>
 
 <!-- ![alt text](app/assets/images/Twitch-logo-reverse.png?raw=true "Switch") -->
 <p align="center"><img ="center" src="app/assets/images/Twitch-logo-reverse.png?raw=true" width="200" height="200" /></p>
