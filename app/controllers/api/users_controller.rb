@@ -1,9 +1,10 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-
         if @user.save
             login(@user)
+            photo = File.open(Rails.root + 'app/assets/images/generic-user-logo.png')
+            @user.channel_photo.attach(io: photo, filename:'generic-user-logo.png')
             render :info
         else
             render json: @user.errors.full_messages, status: 422
@@ -21,6 +22,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :channel_photo) #:channel_photo
+        params.require(:user).permit(:username, :email, :password)
     end
 end
