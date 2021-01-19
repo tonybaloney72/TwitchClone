@@ -12,41 +12,26 @@ Switch-tv is a video sharing website designed as a Twitch clone. The user can cr
 <img src="app/assets/images/upload-form.png?raw=true">
 <img src="app/assets/images/upload-form-preview.png?raw=true">
 ```javascript
-    handleSubmit(e) {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('clip[title]', this.state.title);
-        formData.append('clip[user_id]', this.props.userId);
-        formData.append('clip[category]', this.state.category);
-        if (this.state.clipFile) formData.append('clip[video_clip]', this.state.clipFile);
-        this.props.submitClip(formData)
-            .then(response => {
-                (this.props.history.push(`/clips/${response.clip.id}`))
-            }
-        )
-    }
-    
-    handleInput(field) {
-        return e => this.setState({ [field]: e.target.value})
-    }
-
-    handleFile(e) {
-        const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => (
-            this.setState({clipFile: file, clipURL: fileReader.result})
-        );
-        if (file) {
-            fileReader.readAsDataURL(file);
+handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('clip[title]', this.state.title);
+    formData.append('clip[user_id]', this.props.userId);
+    formData.append('clip[category]', this.state.category);
+    if (this.state.clipFile) formData.append('clip[video_clip]', this.state.clipFile);
+    this.props.submitClip(formData)
+        .then(response => {
+            (this.props.history.push(`/clips/${response.clip.id}`))
         }
-    }
+    )
+}
 ```
-```
+
 * Delete videos that you uploaded
 <img src="app/assets/images/delete-own-clip.png?raw=true">
 
 * Participate in live chat!
-<img src="app/assets/images/live-chat-2.gif?raw=true">
+<img src="app/assets/images/live-chat-final.gif?raw=true">
 
 ```ruby
 class ChatChannel < ApplicationCable::Channel
@@ -66,21 +51,21 @@ class ChatChannel < ApplicationCable::Channel
 end
 ```
 ```javascript
-  componentDidMount() {
-    App.cable.subscriptions.create(
-      { channel: "ChatChannel", id: this.props.clipId },
-      {
-        received: data => {
-          this.setState({
-            messages: this.state.messages.concat([data])
-          });
-        },
-        speak: function(data) {
-          return this.perform("speak", data);
-        }
+componentDidMount() {
+  App.cable.subscriptions.create(
+    { channel: "ChatChannel", id: this.props.clipId },
+    {
+      received: data => {
+        this.setState({
+          messages: this.state.messages.concat([data])
+        });
+      },
+      speak: function(data) {
+        return this.perform("speak", data);
       }
-    );
-  }
+    }
+  );
+}
 ```
 
 ## Technologies
