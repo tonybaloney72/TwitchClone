@@ -9,6 +9,7 @@ import ClipShowContainer from './clips/clip_show_container';
 import ClipFormContainer from './clips/clip_form_container';
 import CategoryContainer from './categories/category_container'
 import Directory from './directory/directory'
+import About from './about/about'
 
 // change '/upload' to AuthRoute
 
@@ -22,6 +23,7 @@ const App = () => {
                 <Route exact path="/clips/:clipId" component={ClipShowContainer} />
                 <Route exact path="/categories/:categoryId" component={CategoryContainer} />
                 <Route exact path="/directory" component={Directory}/>
+                <Route exact path="/about" component={About}/>
                 <Route exact path="/" component={SplashContainer}/>
                 <Redirect to="/" />
             </Switch>

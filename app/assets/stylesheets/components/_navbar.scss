@@ -14,15 +14,24 @@
             width: 30px;
             height: 30px;
             margin: 10px;
+            transition: transform .2s;
         }
 
-        .browse {
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
             margin-left: 25px;
 
             p {
                 font-size: 1.25em;
                 font-weight: 500;
             }
+        }
+
+        .nav-links:hover {
+            color: #9147FF;
         }
     }
 
