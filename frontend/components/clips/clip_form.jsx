@@ -75,6 +75,10 @@ class ClipForm extends React.Component {
                 return <h3 className="clip-preview">Preivew your clip here before submitting</h3>;
             }
         }
+
+        let submitDisable = false
+        if (this.state.clipFile === null) submitDisable = true
+
         return (
             <div className = "submit-form-parent">
                 <div className="clip-submit-form">
@@ -106,7 +110,7 @@ class ClipForm extends React.Component {
                                 <input id="file-upload" type="file" onChange={this.handleFile}/>
                             </div>
                         </div>
-                        <button id="clip-submit">Submit</button>
+                        <button id="clip-submit" disabled={submitDisable}>Submit</button>
                     </form>
                 </div>
                 <div className="preview-box">
