@@ -44,7 +44,7 @@
             background: rgb(240, 240, 240)
         }
 
-        #clip-submit {
+        .clip-submit.submittable {
             font-size: 1rem;
             padding: 6px 8px;
             border-radius: 6px;
@@ -54,8 +54,22 @@
             max-width: 50px;
         }
 
-        #clip-submit:hover {
+        .clip-submit.submittable:hover {
             background: #772CE8;
+        }
+
+        .clip-submit.not-submittable {
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-top: 20px;
+            background: #646464;
+            color: #ffffff;
+            max-width: 50px;
+        }
+
+        .clip-submit.not-submittable:hover {
+            cursor: default;
         }
 
         .clip-errors {

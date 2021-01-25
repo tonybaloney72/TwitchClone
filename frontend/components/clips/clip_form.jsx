@@ -77,7 +77,11 @@ class ClipForm extends React.Component {
         }
 
         let submitDisable = false
-        if (this.state.clipFile === null) submitDisable = true
+        let submitId = 'submittable'
+        if (this.state.clipFile === null) { 
+            submitDisable = true
+            submitId = 'not-submittable'
+        }
 
         return (
             <div className = "submit-form-parent">
@@ -110,7 +114,7 @@ class ClipForm extends React.Component {
                                 <input id="file-upload" type="file" onChange={this.handleFile}/>
                             </div>
                         </div>
-                        <button id="clip-submit" disabled={submitDisable}>Submit</button>
+                        <button className={`clip-submit ${submitId}`} disabled={submitDisable}>Submit</button>
                     </form>
                 </div>
                 <div className="preview-box">
