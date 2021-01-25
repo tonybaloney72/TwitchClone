@@ -30,7 +30,7 @@ class CarouselItem extends Component {
   }
 
   handleClick() {
-    this.props.history.push(`/clip/${this.props.clip.id}`);
+    this.props.history.push(`/clips/${this.props.clip.id}`);
   }
 
   render() {
