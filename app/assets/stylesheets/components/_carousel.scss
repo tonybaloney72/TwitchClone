@@ -8,14 +8,14 @@
 
 #clip-carousel {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
 .carousel span {
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 350px;
 }
 
@@ -63,11 +63,11 @@
 }
 
 .clip-carousel-item.level1 {
-    left: 40%;
+    left: 35%;
 }
 
 .clip-carousel-item.level-1 {
-    left: 60%;
+    left: 65%;
 }
 
 .clip-carousel-item.level2, .clip-carousel-item.level-2 {
@@ -86,11 +86,11 @@
 }
 
 .clip-carousel-item.level2 {
-    left: 30%;
+    left: 20%;
 }
 
 .clip-carousel-item.level-2 {
-    left: 70%;
+    left: 80%;
 }
 
 .carousel-channel-photo {
@@ -102,11 +102,19 @@
     padding: 10px;
 }
 
-.arrow {
-    z-index: 3;
-    background: white;
-}
+// .arrow {
+    // z-index: 3;
+    // background: white;
+    // position: absolute;
+// }
 
+// .arrow-left {
+//     left: 20%;
+// }
+
+// .arrow-right {
+//     left: 80%;
+// }
 
 // .carousel-header {
 //     text-align: center;

@@ -92,6 +92,7 @@ class ClipCarousel extends React.Component {
           <h3 className="featured">Featured</h3>
         </div>
         <div id="clip-carousel" className="noselect">
+            <div></div>
           {this.renderLeftArrow()}
           <CSSTransitionGroup
             transitionName={this.state.direction}
@@ -101,6 +102,7 @@ class ClipCarousel extends React.Component {
             {this.getClips()}
           </CSSTransitionGroup>
           {this.renderRightArrow()}
+          <div></div>
         </div>
       </>
     );
