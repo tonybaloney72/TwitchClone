@@ -1,6 +1,6 @@
 <h1 align="center">Switch-tv</h1>
 
-<p align="center"><img ="center" src="app/assets/images/Twitch-logo-reverse.png?raw=true" width="200" height="200" /></p>
+<p align="center"><img ="center" src="app/assets/images/TwitchLogoReverse.png?raw=true" width="200" height="200" /></p>
 
 Switch-tv is a video sharing website designed as a Twitch clone. The user can create an account, upload video clips from their favorite streamers or even their own content! Each video clip has it's own chat that the user's can participate in.
 
@@ -79,7 +79,6 @@ componentDidMount() {
 
 ## Todo
 
-* Add video carousel to landing/home page
 * Add user show page/User's "channel"
 * Add left navbar for navigating recommended channels/followed channels
 * Add /directory to browse channels and video clips
