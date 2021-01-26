@@ -15,7 +15,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('Twitch-logo-reverse.png') %>
+    <%= favicon_link_tag asset_path('TwitchLogoReverse.png') %>
     <% if current_user %>
       <script>
         window.currentUser = {
@@ -28,12 +28,12 @@
     <% end %>
     <script>
       window.images = {
-        logo: "<%= asset_path("Twitch-logo-reverse.png") %>",
-        userPic: "<%= asset_path("generic-user-logo.png") %>",
-        ghlogo: "<%= image_url("GitHub_Logo.png") %>",
-        lilogo: "<%= image_url("Linkedin-Logo.png") %>",
-        allogo: "<%= image_url("AngelList_Black.png") %>",
-        anthony: "<%= image_url("ant-b") %>"
+        logo: "<%= asset_path("TwitchLogoReverse.png") %>",
+        userPic: "<%= asset_path("genericUserLogo.png") %>",
+        ghlogo: "<%= image_url("gitHubLogo.png") %>",
+        lilogo: "<%= image_url("LinkedinLogo.png") %>",
+        allogo: "<%= image_url("AngelListBlack.png") %>",
+        anthony: "<%= image_url("AntB.png") %>"
       }
     </script>
     <script src="https://kit.fontawesome.com/1576428ae6.js" crossorigin="anonymous"></script>

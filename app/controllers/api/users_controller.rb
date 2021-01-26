@@ -3,8 +3,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login(@user)
-            photo = File.open(Rails.root + 'app/assets/images/generic-user-logo.png')
-            @user.channel_photo.attach(io: photo, filename:'generic-user-logo.png')
+            photo = File.open(Rails.root + 'app/assets/images/genericUserLogo.png')
+            @user.channel_photo.attach(io: photo, filename:'genericUserLogo.png')
             render :info
         else
             render json: @user.errors.full_messages, status: 422

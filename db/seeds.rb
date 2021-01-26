@@ -7,12 +7,12 @@ Message.delete_all
 
 # email, username, password
 demo_user = User.create({email: 'demouser@email.com', username: 'SwitchDemoUser', password: '123456'})
-demo_user_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/generic-user-logo.png')
-demo_user.channel_photo.attach(io: demo_user_image, filename: 'generic-user-logo.png')
+demo_user_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/genericUserLogo.png')
+demo_user.channel_photo.attach(io: demo_user_image, filename: 'genericUserLogo.png')
 
 tonybaloney = User.create({email: 'baloney@email.com', username: 'TonyBaloney', password: '654321'})
-tonybaloney_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/generic-user-logo.png')
-tonybaloney.channel_photo.attach(io: tonybaloney_image, filename: 'generic-user-logo.png')
+tonybaloney_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/genericUserLogo.png')
+tonybaloney.channel_photo.attach(io: tonybaloney_image, filename: 'genericUserLogo.png')
 
 the_hermit = User.create({email: 'thirduser@email.com', username: 'TheHermit', password: 'hermit321'})
 the_hermit_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/gfh.png')
