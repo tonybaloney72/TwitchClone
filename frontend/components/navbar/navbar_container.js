@@ -9,7 +9,7 @@ import {
 
 const msp = state => ({
     currentUser: state.entities.users[state.session.currentUser],
-    currentUserPic: state.entities.users[state.session.currentUser].channel_photo
+    currentUserPic: state.entities.users[state.session.currentUser]?.channel_photo
 })
 
 const mdp = dispatch => ({
