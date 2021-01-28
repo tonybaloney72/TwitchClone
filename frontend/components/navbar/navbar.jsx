@@ -33,7 +33,11 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
                                 <li><i className="fas fa-sign-out-alt fa-flip-horizontal fa-flip-vertical"></i> Log Out</li>
                             </Link>
                             <Link to="/upload">
-                                <li><i className="fas fa-arrow-circle-up"></i>  Upload a Clip</li>
+                                <li>
+                                    <i className="fas fa-arrow-circle-up"></i>  Upload a Clip</li>
+                            </Link>
+                            <Link to="/profile">
+                                <li>Profile</li>
                             </Link>
                         </ul>
                     </div>
