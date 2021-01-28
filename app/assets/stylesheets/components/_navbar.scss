@@ -48,6 +48,10 @@
         .dropdown {
             position: relative;
             display: inline-block;
+
+            img {
+                border-radius: 50%;
+            }
         }
 
         .menu-content {

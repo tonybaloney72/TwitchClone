@@ -18,7 +18,7 @@ class Profile extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('user[channel_photo]', this.state.avatarFile)
+        if (this.state.avatarFile) formData.append('user[channel_photo]', this.state.avatarFile)
         this.props.updateUser(this.props.currentUser, formData)
             .then(() => this.setState({avatarFile: null, avatarUrl: null}))
     }

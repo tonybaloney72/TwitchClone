@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
 
         if @user.update(update_params)
-            render show
+            render "api/users/show"
         else
             render @user.errors.full_messages, status: 401
         end

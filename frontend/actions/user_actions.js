@@ -18,7 +18,7 @@ const receiveUpdatedUser = user => ({
     user
 })
 
-export const updateUser = userId => dispatch => (
+export const updateUser = (userId, formData) => dispatch => (
     UserAPI.updateUser(userId, formData)
         .then(user => dispatch(receiveUpdatedUser(user)))
 )
