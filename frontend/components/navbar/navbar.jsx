@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
+const NavBar = ({ currentUser, logout, clearErrors, openModal, currentUserPic }) => {
 
     const logged_out = () => (
         <div className="navbar">
             <div className="navleft">
                 <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
-                <Link className="nav-links" to="/directory"><p>Browse</p></Link>
+                {/* <Link className="nav-links" to="/directory"><p>Browse</p></Link> */}
                 <Link className="nav-links" to="/about"><p>About</p></Link>
             </div>
             <div className="navright">
@@ -21,19 +21,24 @@ const NavBar = ({ currentUser, logout, clearErrors, openModal }) => {
         <div className="navbar">
             <div className="navleft">
                 <Link className="homebutton" to="/" onClick={clearErrors}><img src={window.images.logo}/></Link>
-                <Link className="nav-links" to="/directory"><p>Browse</p></Link>
+                {/* <Link className="nav-links" to="/directory"><p>Browse</p></Link> */}
                 <Link className="nav-links" to="/about"><p>About</p></Link>
             </div>
             <div className="navright">
                 <div className="dropdown">
-                    <img className="menu" src={currentUser.channel_photo} />
+                    <img className="menu" src={currentUserPic} />
                     <div className="menu-content">
                         <ul>
                             <Link onClick={logout}>
                                 <li><i className="fas fa-sign-out-alt fa-flip-horizontal fa-flip-vertical"></i> Log Out</li>
                             </Link>
                             <Link to="/upload">
-                                <li><i className="fas fa-arrow-circle-up"></i>  Upload a Clip</li>
+                                <li>
+                                    <i className="fas fa-arrow-circle-up"></i> Upload a Clip</li>
+                            </Link>
+                            <Link to="/profile">
+                                <li>
+                                    <i className="fas fa-user-alt"></i> Profile</li>
                             </Link>
                         </ul>
                     </div>

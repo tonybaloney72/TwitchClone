@@ -17,7 +17,7 @@ tonybaloney.channel_photo.attach(io: tonybaloney_image, filename: 'genericUserLo
 the_hermit = User.create({email: 'thirduser@email.com', username: 'TheHermit', password: 'hermit321'})
 the_hermit_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/gfh.png')
 the_hermit.channel_photo.attach(io: the_hermit_image, filename: 'gfh.png')
-
+u.ch
 jessicas_dad = User.create({email: 'thirduser@email.com', username: 'JessicasDad', password: 'neenoh123'})
 jessicas_dad_image = open('https://switch-seeds.s3-us-west-1.amazonaws.com/channel_photos/neenoh.png')
 jessicas_dad.channel_photo.attach(io: jessicas_dad_image, filename: 'neenoh.png')

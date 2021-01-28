@@ -8,7 +8,8 @@ import {
     clearErrors } from '../../actions/session_actions'
 
 const msp = state => ({
-    currentUser: state.entities.users[state.session.currentUser]
+    currentUser: state.entities.users[state.session.currentUser],
+    currentUserPic: state.entities.users[state.session.currentUser].channel_photo
 })
 
 const mdp = dispatch => ({

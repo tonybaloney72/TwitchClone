@@ -109,7 +109,7 @@ class ClipForm extends React.Component {
                         <div className="upload-container">
                             <div className="upload-wrapper">
                                 <label htmlFor="file-upload" className="upload-button">
-                                    Upload a clip
+                                    Select a Clip
                                 </label>
                                 <input id="file-upload" type="file" onChange={this.handleFile}/>
                             </div>

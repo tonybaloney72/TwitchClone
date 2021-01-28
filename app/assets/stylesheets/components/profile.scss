@@ -1,0 +1,93 @@
+.avatar-form-parent {
+
+    display: flex;
+    justify-content: center;
+
+    .avatar-submit-form {
+
+        margin-left: 40px;
+        margin-top: 40px;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .avatar-submit.submittable {
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-top: 20px;
+            background: #9147FF;
+            color: #ffffff;
+            max-width: 150px;
+        }
+
+        .avatar-submit.submittable:hover {
+            background: #772CE8;
+        }
+
+        .avatar-submit.not-submittable {
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-top: 20px;
+            background: #646464;
+            color: #ffffff;
+            max-width: 150px;
+        }
+
+        .avatar-submit.not-submittable:hover {
+            cursor: default;
+        }
+    }
+}
+
+.avatar-preview-box {
+    
+    display: flex;
+    justify-content: center;
+    
+    .avatar-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .avatar-preview {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        top: 0;
+    }
+}
+
+.upload-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 6px 8px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: #9147FF;
+    color: #ffffff;
+    max-width: 150px;
+    cursor: pointer;
+    &:hover {background: #772CE8}
+}
+  
+.upload-wrapper input[type=file] {
+    font-size: 100px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
