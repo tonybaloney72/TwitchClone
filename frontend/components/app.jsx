@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../utils/route_util'
+import { ProtectedRoute } from '../utils/route_util'
 
 import Modal from './modal/modal';
 import SplashContainer from './splash/splash_container'
@@ -11,8 +11,6 @@ import CategoryContainer from './categories/category_container'
 import Directory from './directory/directory'
 import About from './about/about'
 import Profile from './profile/profile';
-
-// change '/upload' to AuthRoute
 
 const App = () => {
     return (
@@ -29,7 +27,6 @@ const App = () => {
                 <Route exact path="/" component={SplashContainer}/>
                 <Redirect to="/" />
             </Switch>
-
         </div>
     )
 }
